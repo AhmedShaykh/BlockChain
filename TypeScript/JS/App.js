@@ -1,0 +1,12 @@
+"use strict";
+console.log('Learning TS!');
+const abc = "TS";
+const num = 123;
+const bool = true;
+let undef;
+let nul;
+console.log(abc);
+console.log(num);
+console.log(bool);
+console.log(undef);
+// console.log(nul);
