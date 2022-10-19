@@ -11,3 +11,35 @@ console.log(num);
 console.log(bool);
 console.log(undef);
 console.log(nul);
+
+let firstName: string = "Ahmed";
+console.log(firstName.length);
+
+let boolean: boolean = Math.random() > 0.5 ? true : false;
+console.log(boolean);
+
+let nam: string = "Ahmed Shaykh";
+nam = "Ahmed Shaikh";
+
+console.log(nam);
+
+let rocket: string = "Rocket";
+console.log(rocket.toUpperCase());
+console.log(rocket.toLowerCase());
+
+let myName: string;
+myName = "Ahmed Saleem Shaikh";
+console.log(myName);
+
+import { metaVerse } from "./index";
+import { Course } from "./index";
+
+export const course: Course = {
+    name: "Web 3 & Metaverse Developer",
+    classDay: "Webnesday",
+    startUp: "DAO",
+    classTiming: 6
+}
+
+console.log(metaVerse);
+console.log(course);
