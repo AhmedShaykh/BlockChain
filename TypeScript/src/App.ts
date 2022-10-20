@@ -44,7 +44,7 @@ export const course: Course = {
 console.log(metaVerse);
 console.log(course);
 
-// ========== Unions ========== //
+// ========== Unions Types ========== //
 
 let mathematician = Math.random() > 0.5 ? 123 : "Mark Goldberg";
 console.log(mathematician);
@@ -82,3 +82,65 @@ if (scientist === "Thomas Edison") {
 else if (scientist === 87.6) {
     console.log(scientist.toFixed());
 }
+
+let researcher = Math.random() > 0.5 ? "Rosalind Franklin" : 51.08341254;
+
+typeof researcher !== "string" ? console.log(researcher.toFixed()) : console.log(researcher.toUpperCase());
+
+// ========== Literal Types ========== //
+
+let literal: number | string = "String";
+console.log(literal);
+
+literal = 44;
+console.log(literal);
+
+let science: number | string;
+science = Math.random() > 0.5 ? "Science" : 404;
+
+if (science === "science") {
+    science.toUpperCase();
+}
+
+console.log(science);
+
+let biologist = Math.random() > 0.5 && "Rachel Carson"; // String | False
+console.log(biologist);
+
+let program: string;
+program = "Smart Contract";
+
+console.log(program.length);
+
+let maths: string | undefined;
+console.log(maths?.length); // Optional
+
+maths = "Data Sorting";
+console.log(maths.length);
+
+// ========== Type Alias ========== //
+
+type RawData = boolean | number | string;
+
+let rawDataFirst: RawData;
+let rawDataSecond: RawData;
+let rawDataThird: RawData;
+
+console.log(rawDataFirst = true);
+console.log(rawDataSecond = "AHMED");
+console.log(rawDataThird = 4000);
+
+type Id = boolean | string;
+type IdMaybe = Id | undefined | null;
+
+let typeFirst: IdMaybe;
+let typeSecond: IdMaybe;
+let typeThird: IdMaybe;
+let typeFourth: IdMaybe;
+
+console.log(typeFirst = 'Ahmed');
+console.log(typeSecond);
+console.log(typeThird = null);
+console.log(typeFourth = false);
+
+// ========== Objects ========== //
