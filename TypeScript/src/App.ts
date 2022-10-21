@@ -144,3 +144,89 @@ console.log(typeThird = null);
 console.log(typeFourth = false);
 
 // ========== Objects ========== //
+
+let engineer: {
+    born: number;
+    name: string;
+};
+
+engineer = {
+    born: 1999,
+    name: "Elon Musk"
+}
+
+console.log(engineer);
+console.log(engineer.name);
+
+type Poet = {
+    year: number;
+    name: string;
+};
+
+let poetLater: Poet;
+
+poetLater = {
+    year: 2001,
+    name: "Dayyan",
+};
+
+console.log(poetLater);
+
+type WithFirstName = {
+    firstName: string;
+};
+
+type WithLastName = {
+    lastName: string;
+};
+
+const hasBoth = {
+    firstName: "Defence",
+    lastName: "Clifton",
+};
+
+let withFirstName: WithFirstName = hasBoth;
+console.log(withFirstName.firstName);
+
+let withLastName: WithLastName = hasBoth;
+console.log(withLastName.lastName);
+
+type FirstAndLastNames = {
+    first: string;
+    last: string;
+};
+
+const fullName: FirstAndLastNames = {
+    first: "Sabrina",
+    last: "Carpenter",
+};
+
+console.log(fullName);
+
+const namOnlyOne: FirstAndLastNames = {
+    first: "Mariam Nawaz",
+    last: "Gunji"
+};
+
+console.log(namOnlyOne);
+console.log(`Nawaz Sharif Ki Beti ` + namOnlyOne.last);
+
+let transGender: string | boolean = true;
+
+if (typeof boolean) {
+    console.log(`Bilawal is LadyBoy ` + transGender);
+}
+
+else {
+    console.log(`Jab Baarish Hoti Hai To Bilawal Ata Hai`);
+}
+
+type TimeRange = {
+    start: Date;
+}
+
+const myDate: TimeRange = {
+    start: new Date()
+}
+
+console.log(myDate);
