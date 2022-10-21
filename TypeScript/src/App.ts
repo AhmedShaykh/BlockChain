@@ -230,3 +230,41 @@ const myDate: TimeRange = {
 }
 
 console.log(myDate);
+
+type Poem = {
+    author: {
+        firstName: string;
+        lastName: string;
+    };
+    name: string;
+};
+
+const poemMatch: Poem = {
+    author: {
+        firstName: "Sylvia",
+        lastName: "Plath",
+    },
+    name: "Lady Lazarus",
+};
+
+console.log(poemMatch);
+
+type Author = {
+    firstName: string;
+    lastName: string;
+};
+
+type Writer = {
+    author: Author;
+    name: string;
+};
+
+const poemMismatch: Poem = {
+    author: {
+        firstName: "Abdul Dayyan",
+        lastName: "Ali Khan"
+    },
+    name: "Tulips",
+};
+
+console.log(poemMismatch);
