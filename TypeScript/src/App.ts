@@ -1,5 +1,3 @@
-console.log('Learning TS!');
-
 const abc: string = "TS";
 const num: number = 123;
 const bool: boolean = true;
@@ -402,3 +400,66 @@ const oneArtwork: ShortPoems = {
 console.log(oneArtwork);
 
 // ========== Function ========== //
+
+function sing(song: string) {
+    console.log(`Singing: ${song}!`);
+}
+
+sing("Ole Ole");
+
+function announceSong(song: string, singer?: string) {
+    console.log(`Song: ${song}`);
+
+    if (singer) {
+        console.log(`Singer: ${singer}`);
+    }
+}
+
+announceSong("Dreamer");
+announceSong("On My Way", "Sabrina Carpenter");
+
+function announceSongBy(song: string, singer: string | undefined) {
+    console.log(`Song: ${song}`);
+
+    if (singer) {
+        console.log(`Singer: ${singer}`);
+    }
+    else {
+        console.log(singer);
+    }
+}
+
+announceSongBy("Greensleeves", undefined);
+
+function edm(song: string, rating = 0) {
+    console.log(`${song} Gets Rating ${rating}/10`);
+}
+
+edm("Hardwell - Mad World", 9);
+edm("Will Sparks - Dreaming", 10);
+
+function song(singer: string, ...songs: string[]) {
+
+    for (const var1 of songs) {
+        console.log(`${var1} Feat. ${singer}`)
+    }
+}
+
+song("Akcent", "Thats My Name", "Stay With Me", "King Of Disco");
+
+function technoTrance(techno: string[]) {
+
+    for (let trance of techno) {
+        console.log(`${trance}`);
+    }
+
+    return techno.length;
+}
+
+technoTrance(["Will Sparks - L.S.D", "MADDIX - Formula"]);
+
+function getSongAt(songs: string[], index: number) {
+    return index < songs.length ? songs[index] : songs;
+}
+
+console.log(getSongAt(["Revealed", "SunSet"], 30));
