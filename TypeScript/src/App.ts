@@ -547,3 +547,16 @@ function overload(a: any, b: any): any {
 
 console.log(overload("Hello ", "World"));
 console.log(overload(112, 88));
+
+// ========== Arrays ========== //
+
+let newArray = ["array", "array2", 123, 456, true];
+
+newArray.pop();
+newArray.push(789, false);
+console.log(newArray);
+
+let arrayOfNumbers: number[];
+arrayOfNumbers = [4, 8, 15, 16, 23, 42];
+
+console.log(arrayOfNumbers);
