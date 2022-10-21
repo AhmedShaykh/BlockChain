@@ -458,8 +458,49 @@ function technoTrance(techno: string[]) {
 
 technoTrance(["Will Sparks - L.S.D", "MADDIX - Formula"]);
 
-function getSongAt(songs: string[], index: number) {
-    return index < songs.length ? songs[index] : songs;
+function getSongAt(songs: string, index: number) {
+    return index < songs.length ? songs[index] : undefined;
 }
 
-console.log(getSongAt(["Revealed", "SunSet"], 30));
+console.log(getSongAt("Revealed", 4));
+
+function getSongRecordingDate(song: string): Date | undefined | string {
+    switch (song) {
+        case "Summertime Sadness":
+            return new Date();
+        case "Lockdown":
+            return "14 August, 2018";
+        default:
+            return undefined;
+    }
+}
+
+console.log(getSongRecordingDate("Lockdown"));
+console.log(getSongRecordingDate("Summertime Sadness"));
+
+function fun1(callback: Function) {
+    setTimeout(() => {
+        callback();
+    }, 2000);
+    console.log("Please Wait...");
+}
+
+function fun2() {
+    console.log("Working Done!")
+}
+
+fun1(fun2);
+
+let phonk: (genre: string) => string;
+
+phonk = function (genre) {
+    return `InterWood: ${genre.toUpperCase()}!`;
+};
+
+console.log(phonk("Metamorphosis"));
+
+let data1 = ['text2', 'text3', 'text4'];
+
+data1.forEach((data, index) => {
+    console.log(data, index);
+});
