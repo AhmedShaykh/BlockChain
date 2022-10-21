@@ -504,3 +504,46 @@ let data1 = ['text2', 'text3', 'text4'];
 data1.forEach((data, index) => {
     console.log(data, index);
 });
+
+type StringToNumber = (input: string) => number;
+
+let stringToNumber: StringToNumber;
+
+stringToNumber = (input) => input.length;
+
+console.log(stringToNumber("Four"));
+
+type NumberToString = (input: number) => string;
+
+function usesNumberToString(NumberToString: NumberToString) {
+    console.log(`The String is: ${NumberToString(1234)}`);
+}
+
+usesNumberToString((input) => `${input}! Hooray!`);
+
+type dataS = (abc: number) => number;
+
+function funName(data2: dataS): void {
+    console.log(data2(404));
+}
+
+funName((abc) => 4843657453);
+
+let songLogger: (song: string) => void;
+
+songLogger = (song) => {
+    console.log(`${song}`);
+};
+
+songLogger("Feel It");
+
+// ========== Overloads ========== //
+
+function overload(a: String, b: String): String;
+function overload(a: number, b: number): number;
+function overload(a: any, b: any): any {
+    return a + b;
+};
+
+console.log(overload("Hello ", "World"));
+console.log(overload(112, 88));
