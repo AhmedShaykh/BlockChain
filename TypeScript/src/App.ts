@@ -214,7 +214,7 @@ console.log(`Nawaz Sharif Ki Beti ` + namOnlyOne.last);
 let transGender: string | boolean = true;
 
 if (typeof boolean) {
-    console.log(`Bilawal is LadyBoy ` + transGender);
+    console.log(`Bilawal is a SheMale ??? ` + transGender);
 }
 
 else {
@@ -268,3 +268,119 @@ const poemMismatch: Poem = {
 };
 
 console.log(poemMismatch);
+
+type Book = {
+    author?: string;
+    pages: number;
+};
+
+const book1: Book = {
+    author: "Rita Ora",
+    pages: 80,
+};
+
+const book2: Book = {
+    pages: 75
+};
+
+console.log(book1);
+console.log(book2);
+
+type Writers = {
+    author: string | undefined;
+    editor?: string;
+};
+
+const missingWriters: Writers = {
+    author: undefined,
+};
+
+const hasWriters: Writers = {
+    author: "William Shakespeare",
+    editor: "Adobe"
+}
+
+console.log(missingWriters);
+console.log(hasWriters);
+
+const series = Math.random() > 0.5 ? {
+    name: "Vikings",
+    storyLine: "Reality",
+} : {
+    name: "Stranger Things",
+    fantasy: true,
+}
+
+console.log(typeof series.name, series.name);
+console.log(typeof series.storyLine, series.storyLine);
+console.log(typeof series.fantasy, series.fantasy);
+
+type PoemWithPages = {
+    name: string;
+    page: number;
+    type: string;
+};
+
+type PoemWithRhymes = {
+    name: string;
+    rhymes: boolean;
+    type: string;
+};
+
+type Poems = PoemWithPages | PoemWithRhymes;
+
+const poem: Poems = Math.random() > 0.5
+    ? { name: "The Double Image", page: 7, type: 'Pages' }
+    : { name: "Her Kind", rhymes: true, type: 'Rhymes' };
+
+console.log(poem.name);
+
+if ("page" in poem) {
+    console.log(poem.page);
+}
+
+else {
+    console.log(poem.rhymes);
+}
+
+console.log(poem.type);
+
+type Artwork = {
+    genre: string;
+    name: string;
+};
+
+type Writing = {
+    pages: number;
+    name: string;
+};
+
+type WrittenArt = Artwork & Writing;
+
+const workArt: WrittenArt = {
+    genre: "Techno",
+    name: "AHM X",
+    pages: 44,
+};
+
+console.log(workArt);
+
+type ShortPoem = { author: string } & (
+    | { kigo: string; type: "haiku"; }
+    | { meter: number; type: "villanelle"; }
+);
+
+const morningGlory: ShortPoem = {
+    author: "Fukuda Chiyo-ni",
+    kigo: "Morning Glory",
+    type: "haiku",
+};
+
+const oneArt: ShortPoem = {
+    author: "Elizabeth Bishop",
+    type: "villanelle",
+    meter: 66,
+};
+
+console.log(oneArt);
+console.log(morningGlory);
