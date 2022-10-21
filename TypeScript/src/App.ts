@@ -384,3 +384,21 @@ const oneArt: ShortPoem = {
 
 console.log(oneArt);
 console.log(morningGlory);
+
+type ShortPoemBase = { author: string };
+
+type Haiku = ShortPoemBase & { name: string; type: "haiku" };
+
+type Villanelle = ShortPoemBase & { meter: number; type: "villanelle" };
+
+type ShortPoems = Haiku | Villanelle;
+
+const oneArtwork: ShortPoems = {
+    author: "Elizabeth Bishop",
+    type: "villanelle",
+    meter: 101,
+};
+
+console.log(oneArtwork);
+
+// ========== Function ========== //
