@@ -782,3 +782,44 @@ const mixesNumbersAndStrings: MoreNarrowNumbers = {
 };
 
 console.log(mixesNumbersAndStrings);
+
+interface Novel {
+    author: {
+        name: string;
+    };
+    setting: Setting;
+};
+
+interface Setting {
+    place: string;
+    year: number;
+};
+
+let myNovel: Novel;
+
+myNovel = {
+    author: {
+        name: 'Jane Austen',
+    },
+    setting: {
+        place: 'England',
+        year: 1812,
+    }
+};
+
+console.log(myNovel.setting);
+
+interface Writinng {
+    title: string;
+};
+
+interface Novella extends Writinng {
+    pages: number;
+};
+
+let myNovella: Novella = {
+    pages: 195,
+    title: "Ethan Frome",
+};
+
+console.log(myNovella);
