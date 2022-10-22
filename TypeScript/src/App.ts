@@ -1055,30 +1055,6 @@ class CarX {
 let myCarX = new CarX("Bugatti");
 myCarX.getBrand();
 
-class CarY {
-    protected brand: string;
-
-    constructor(brand: string) {
-        this.brand = brand;
-    }
-
-    getBrand() {
-        console.log(this.brand)
-    }
-}
-
-// class Car extends CarY {
-//     public model: string;
-
-//     constructor(brand: string, model: string) {
-//         super(brand);
-//         this.model = model;
-//     }
-// };
-
-// let Car = new CarY("BMW");
-// Car.getBrand();
-
 class Base {
     public isPublicExplicit: number = 1;
     protected isProtected: number = 2;
