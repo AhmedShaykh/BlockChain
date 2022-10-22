@@ -966,3 +966,139 @@ class StudentMaster extends Master {
 const learning = new StudentMaster();
 learning.learn();
 learning.master();
+
+class Lesson {
+    subject: string;
+
+    constructor(subject: string) {
+        this.subject = subject;
+    }
+};
+
+class OnlineLesson extends Lesson {
+    url: string;
+
+    constructor(subject: string, url: string) {
+        super(subject);
+        this.url = url;
+    }
+}
+
+let lesson: Lesson;
+
+console.log(lesson = new Lesson("Coding"));
+console.log(lesson = new OnlineLesson("Logic Building", "Ahmed.Eth"));
+
+class Assignment {
+    grade?: number;
+};
+
+class GradedAssignment extends Assignment {
+    grade: number;
+
+    constructor(grade: number) {
+        super();
+        this.grade = grade;
+    }
+};
+
+const assignment = new GradedAssignment(99);
+console.log(assignment.grade);
+
+abstract class School {
+    readonly name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    abstract getStudentTypes(): string[];
+};
+
+class Preschool extends School {
+    getStudentTypes() {
+        return ["PanaCloud"];
+    }
+}
+
+const school = new Preschool("PIAIC");
+console.log(school);
+console.log(school.getStudentTypes());
+
+class TwoKeywords {
+    private readonly name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    };
+
+    log() {
+        console.log(this.name);
+    };
+}
+
+const two = new TwoKeywords("Private Class");
+two.log();
+
+class CarX {
+    public brand: string; // Default
+
+    constructor(brand: string) {
+        this.brand = brand;
+    }
+
+    getBrand() {
+        console.log(this.brand)
+    }
+}
+
+let myCarX = new CarX("Bugatti");
+myCarX.getBrand();
+
+class CarY {
+    protected brand: string;
+
+    constructor(brand: string) {
+        this.brand = brand;
+    }
+
+    getBrand() {
+        console.log(this.brand)
+    }
+}
+
+// class Car extends CarY {
+//     public model: string;
+
+//     constructor(brand: string, model: string) {
+//         super(brand);
+//         this.model = model;
+//     }
+// };
+
+// let Car = new CarY("BMW");
+// Car.getBrand();
+
+class Base {
+    public isPublicExplicit: number = 1;
+    protected isProtected: number = 2;
+};
+
+class Subclass extends Base {
+    isPublicImplicit: number = 4;
+
+    examples() {
+        this.isPublicImplicit;
+        this.isPublicExplicit;
+    };
+
+    getData() {
+        console.log(this.isProtected);
+    };
+};
+
+const exampleClass = new Subclass();
+exampleClass.getData();
+
+console.log(exampleClass.isPublicExplicit);
+console.log(exampleClass.isPublicImplicit);
