@@ -1078,3 +1078,15 @@ exampleClass.getData();
 
 console.log(exampleClass.isPublicExplicit);
 console.log(exampleClass.isPublicImplicit);
+
+// ========== Generics ========== //
+
+function identity<T>(input: T) {
+    return input;
+}
+
+const numeric = identity(666);
+console.log(numeric);
+
+const stringy = identity("Generic");
+console.log(stringy);
