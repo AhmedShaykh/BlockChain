@@ -560,3 +560,91 @@ let arrayOfNumbers: number[];
 arrayOfNumbers = [4, 8, 15, 16, 23, 42];
 
 console.log(arrayOfNumbers);
+
+let createStrings: () => string[];
+
+createStrings = () => ["Ahmed", "Dayyan", "Usama"];
+
+console.log(createStrings());
+
+let arrayTS: (string | number)[];
+arrayTS = ["Data", "Type", 345, 864];
+console.log(arrayTS)
+
+let arrayVar: string | number[];
+arrayVar = [1, 2, 3, 4], "Pakistan";
+console.log(arrayVar);
+
+// ========== 2 Dimensional Array ========== //
+
+let arrayDim: (string | number)[][];
+
+arrayDim = [
+    ["Mon", "Tue", "Wed"],
+    [4, 6, 10]
+];
+
+for (let Days in arrayDim) {
+    console.log(arrayDim[Days]);
+};
+
+let Coins: string[] = ["BTC", "ETH", "BNB"];
+
+for (let data in Coins) {
+    console.log(Coins[data]);
+};
+
+const soldiers = ["Harriet Tubman", "Joan of Arc", "Khutulun"];
+
+const soldierAges = [90, 19, 45];
+
+const conjoined = [...soldiers, ...soldierAges];
+console.log(conjoined);
+
+function logWarriors(greeting: string, ...names: string[]) {
+    for (const name of names) {
+        console.log(`${greeting}, ${name}!`);
+    }
+};
+
+const warriors = ["Cathay Williams", "Lozen", "Nzinga"];
+logWarriors("Hello", ...warriors);
+
+// ========== Tuple ========== //
+
+let tuple: [number, string] = [4, "TenUp"];
+console.log(tuple);
+
+let tupleValue: [number, number] = [4, 6];
+console.log(tupleValue);
+
+let [year, warrior] = Math.random() > 0.5
+    ? [340, "Archidamia"]
+    : [1828, "Rani of Jhansi"];
+
+console.log(warrior);
+console.log(year);
+
+const tupleThree: [boolean, number, string] = [false, 1583, "Ninga"];
+const tupleTwoExact: [boolean, number] = [tupleThree[0], tupleThree[1]];
+
+console.log(tupleTwoExact);
+
+let ourTuple: [number, boolean, string];
+
+ourTuple = [5, false, 'Coding God Was Here'];
+
+ourTuple.push('Something New & Wrong');
+console.log(ourTuple);
+
+function logPair(name: string, value: number) {
+    console.log(`${name} has ${value}`);
+}
+
+const pairTupleCorrect: [string, number] = ["Amenda", 1];
+logPair(...pairTupleCorrect);
+
+let tupleConst = ["React Token", true, 505] as const;
+console.log(tupleConst);
+
+// ========== Interfaces ========== //
