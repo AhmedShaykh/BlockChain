@@ -648,3 +648,137 @@ let tupleConst = ["React Token", true, 505] as const;
 console.log(tupleConst);
 
 // ========== Interfaces ========== //
+
+interface Crypto {
+    supply: number;
+    name: string;
+}
+
+let cryptoCoin: Crypto;
+
+cryptoCoin = {
+    supply: 10000,
+    name: "Lamda Coin",
+};
+
+console.log(cryptoCoin);
+
+interface Ethereum {
+    founder: string;
+    price: number;
+    nationality?: string;
+}
+
+let ether: Ethereum = {
+    founder: "Vitalik Buterin",
+    price: 1050,
+    nationality: "Russian Canadian",
+};
+
+console.log(ether);
+
+interface Topic {
+    readonly text: string;
+    pageNumbers?: number;
+}
+
+let topic: Topic = {
+    text: "TypeScript",
+    pageNumbers: 343,
+}
+
+console.log(topic);
+console.log(topic.text);
+
+interface HasBothFunctionTypes {
+    property: () => string;
+    method(): string;
+}
+
+const hasFunction: HasBothFunctionTypes = {
+    property: () => "Check TypeScript!",
+    method() {
+        return "Serverless";
+    }
+};
+
+console.log(hasFunction.method());
+console.log(hasFunction.property());
+
+interface CallSignature {
+    (input: string): number;
+}
+
+const typedFunctionAlias: CallSignature = (input) => input.length;
+
+console.log(typedFunctionAlias("Interface"));
+
+interface FunctionWithCount {
+    count: number;
+    (): void;
+}
+
+let hasCallCount: FunctionWithCount;
+
+function keepsTrackOfCalls() {
+    keepsTrackOfCalls.count += 2;
+    console.log(`I've been called ${keepsTrackOfCalls.count} times!`);
+};
+
+keepsTrackOfCalls.count = 0;
+
+hasCallCount = keepsTrackOfCalls;
+
+keepsTrackOfCalls();
+
+interface WordCounts {
+    [i: string]: number;
+};
+
+const counts: WordCounts = {};
+
+console.log(counts.apple = 0);
+console.log(counts.banana = 1);
+
+interface DatesByName {
+    [i: string]: Date;
+};
+
+const publishDates: DatesByName = {
+    Frankenstein: new Date("1 January 2030"),
+};
+
+publishDates.Frankenstein;
+console.log(publishDates.Frankenstein.toString());
+
+interface ChapterStarts {
+    preface: 0; // Value Fix 0
+    [i: string]: number;
+};
+
+const correctPreface: ChapterStarts = {
+    preface: 0,
+    night: 1,
+    shopping: 5
+};
+
+console.log(correctPreface);
+
+const wrongPreface: ChapterStarts = {
+    preface: 0,
+};
+
+console.log(wrongPreface);
+
+interface MoreNarrowNumbers {
+    [i: number]: string;
+    [i: string]: string | undefined;
+};
+
+const mixesNumbersAndStrings: MoreNarrowNumbers = {
+    0: 'One',
+    key1: 'Two',
+    key2: undefined,
+};
+
+console.log(mixesNumbersAndStrings);
