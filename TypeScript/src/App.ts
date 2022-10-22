@@ -823,3 +823,146 @@ let myNovella: Novella = {
 };
 
 console.log(myNovella);
+
+interface Merged {
+    fromFirst: string;
+};
+
+interface Merged {
+    fromSecond: number;
+}
+
+let merged: Merged = {
+    fromFirst: "BTC",
+    fromSecond: 44
+};
+
+console.log(merged);
+
+// ========== Classes ========== //
+
+class Greeter {
+    constructor(name: string) {
+        console.log(`Hi! ${name}`);
+    }
+};
+
+new Greeter("Ahmed");
+
+class europeTrip {
+
+    destination: string;
+
+    constructor(destination: string) {
+        this.destination = destination;
+        console.log(`We're Going to ${this.destination}!`);
+    };
+};
+
+const trip = new europeTrip("Amsterdam");
+trip.destination;
+
+class WithPropertyParameters {
+    takesParameters = (input: boolean) => input ? "Yes" : "No";
+}
+
+const instance = new WithPropertyParameters();
+console.log(instance.takesParameters(true));
+
+class ActivitiesQueue {
+    pending!: string[];
+
+    initialize(pending: string[]) {
+        this.pending = pending;
+    };
+
+    next() {
+        return this.pending.pop();
+    };
+}
+const activities = new ActivitiesQueue();
+console.log(activities.initialize(['eat', 'sleep', 'learn']));
+console.log(activities.next());
+
+class Quote {
+    readonly text: string;
+
+    constructor(text: string) {
+        this.text = text;
+    };
+};
+
+const quote = new Quote(`Your time is limited, so don’t waste it living someone else’s life.`);
+console.log(quote);
+
+class Teacher {
+    sayHello() {
+        console.log("Take chances, make mistakes, get messy!");
+    };
+}
+
+let teacher: Teacher = new Teacher();
+teacher.sayHello();
+
+interface Learner {
+    name: string;
+    study(hours: number): void;
+}
+
+class Student implements Learner {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    };
+
+    study(hours: number) {
+        for (let i = 0; i < hours; i += 1) {
+            console.log("Pheonix ...");
+        }
+    }
+}
+
+const student = new Student("Pheonix");
+console.log(student);
+student.study(5);
+
+interface Graded {
+    grades: number[];
+};
+
+interface Reporter {
+    report: () => string;
+};
+
+class ReportCard implements Graded, Reporter {
+    grades: number[];
+
+    constructor(grades: number[]) {
+        this.grades = grades;
+    };
+
+    report() {
+        return this.grades.join(", ");
+    }
+};
+
+const card = new ReportCard([103, 297, 356, 599]);
+console.log(card);
+console.log(card.report());
+
+class Master {
+    master() {
+        console.log("The surest test of discipline is its absence.");
+    }
+};
+
+class StudentMaster extends Master {
+    learn() {
+        console.log("I cannot afford the luxury of a closed mind.");
+    }
+};
+
+const learning = new StudentMaster();
+learning.learn();
+learning.master();
