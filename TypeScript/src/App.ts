@@ -644,9 +644,6 @@ function logPair(name: string, value: number) {
 const pairTupleCorrect: [string, number] = ["Amenda", 1];
 logPair(...pairTupleCorrect);
 
-let tupleConst = ["React Token", true, 505] as const;
-console.log(tupleConst);
-
 // ========== Interfaces ========== //
 
 interface Crypto {
@@ -1090,3 +1087,118 @@ console.log(numeric);
 
 const stringy = identity("Generic");
 console.log(stringy);
+
+const generic = <T>(input: T) => input;
+console.log(generic(1234));
+
+function makeTuple<First, Second>(first: First, second: Second) {
+    return [first, second] as const;
+};
+
+let tupleGeneric = makeTuple(true, "abc");
+console.log(tupleGeneric);
+
+interface Box<T> {
+    inside: T;
+};
+
+let stringyBox: Box<string> = {
+    inside: "abc",
+};
+
+console.log(stringyBox);
+
+class Secret<Key, Value> {
+    key: Key;
+    value: Value;
+
+    constructor(key: Key, value: Value) {
+        this.key = key;
+        this.value = value;
+    };
+
+    getValue(key: Key): Value | boolean {
+        return this.key === key
+            ? this.value
+            : false;
+    }
+};
+
+const storage = new Secret(12345, "London");
+console.log(storage);
+console.log(storage.getValue(12345));
+
+type Nullish<T> = null | number;
+
+let dataGet: Nullish<number> = 678;
+console.log(dataGet);
+
+interface KeyValuePair<Key, Value = Key> {
+    key: Key;
+    value: Value;
+};
+
+let allExplicit: KeyValuePair<string, number> = {
+    key: "rating",
+    value: 10,
+};
+
+console.log(allExplicit.key);
+
+interface WithLength {
+    length: number;
+};
+
+function logWithLength<T extends WithLength>(input: T) {
+    console.log(`Length: ${input.length}`);
+    return input;
+};
+
+logWithLength("No one can figure out your worth but you.");
+logWithLength([false, true]);
+logWithLength({ length: 123 });
+
+// ========== Literals to Primitives ========== //
+
+let tupleConst = ["React Token", true, 505] as const;
+console.log(tupleConst);
+
+const getNameConst = () => "Solana" as const;
+console.log(getNameConst());
+
+// ========== ENUM ========== //
+
+enum StatusCode {
+    InternalServerError = 500,
+    NotFound = 404,
+    Ok = 200,
+};
+
+console.log(StatusCode.InternalServerError);
+console.log(StatusCode.NotFound);
+
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+};
+
+console.log(Direction.Right);
+console.log(Direction.Up);
+
+const enum Friuts {
+    Apple = 0,
+    Banana = 1,
+    Orange = 2,
+    Other = 3
+}
+
+let friuts = [
+    Friuts.Apple,
+    Friuts.Banana,
+    Friuts.Orange,
+    Friuts.Other
+];
+
+console.log(friuts);
