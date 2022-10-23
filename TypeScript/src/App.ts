@@ -1192,7 +1192,7 @@ const enum Friuts {
     Banana = 1,
     Orange = 2,
     Other = 3
-}
+};
 
 let friuts = [
     Friuts.Apple,
@@ -1202,3 +1202,71 @@ let friuts = [
 ];
 
 console.log(friuts);
+
+// ========== Class Decorator ========== //
+
+@sealed // TSConfig.JSON Enable "Experimental Decorators" & Then Value is "True"!
+
+class BugReport {
+    type = "Dayyan";
+    title: string;
+
+    constructor(t: string) {
+        this.title = t;
+    }
+};
+
+function sealed(constructor: Function) {
+    Object.seal(constructor);
+    Object.seal(constructor.prototype);
+};
+
+const data = new BugReport("Ahmed");
+console.log(data.title);
+console.log(data.type);
+
+function reportableClassDecorator<T extends { new(...args: any[]): {} }>(constructor: T) {
+    return class extends constructor {
+        reportingURL = "http://www...";
+    };
+};
+
+@reportableClassDecorator
+
+class Bug {
+    type = "Error";
+    title: string;
+
+    constructor(t: string) {
+        this.title = t;
+    }
+};
+
+const bug = new Bug("Needs Dark Mode");
+console.log(bug.title);
+console.log(bug.type);
+
+function logClassWithArgs(filter: Object) {
+    return (target: Object) => {
+        console.log(target, filter);
+    }
+};
+
+@logClassWithArgs({ when: { name: "Bitcoin" } })
+
+class Person {
+
+    public name: string;
+    public surname: string;
+
+    constructor(name: string, surname: string) {
+        this.name = name;
+        this.surname = surname;
+    }
+};
+
+var web = new Person("SOLANA", "POLYGON");
+console.log(web.name);
+console.log(web.surname);
+
+console.log(web instanceof Person);
