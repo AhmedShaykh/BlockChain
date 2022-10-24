@@ -77,6 +77,7 @@ let scientist = Math.random() > 0.5 ? "Thomas Edison" : 87.6;
 if (scientist === "Thomas Edison") {
     console.log(scientist.toUpperCase());
 }
+
 else if (scientist === 87.6) {
     console.log(scientist.toFixed());
 }
@@ -311,7 +312,7 @@ const series = Math.random() > 0.5 ? {
 } : {
     name: "Stranger Things",
     fantasy: true,
-}
+};
 
 console.log(typeof series.name, series.name);
 console.log(typeof series.storyLine, series.storyLine);
@@ -712,24 +713,6 @@ const typedFunctionAlias: CallSignature = (input) => input.length;
 
 console.log(typedFunctionAlias("Interface"));
 
-interface FunctionWithCount {
-    count: number;
-    (): void;
-}
-
-let hasCallCount: FunctionWithCount;
-
-function keepsTrackOfCalls() {
-    keepsTrackOfCalls.count += 2;
-    console.log(`I've been called ${keepsTrackOfCalls.count} times!`);
-};
-
-keepsTrackOfCalls.count = 0;
-
-hasCallCount = keepsTrackOfCalls;
-
-keepsTrackOfCalls();
-
 interface WordCounts {
     [i: string]: number;
 };
@@ -879,6 +862,7 @@ class ActivitiesQueue {
         return this.pending.pop();
     };
 }
+
 const activities = new ActivitiesQueue();
 console.log(activities.initialize(['eat', 'sleep', 'learn']));
 console.log(activities.next());
@@ -1082,13 +1066,27 @@ console.log(exampleClass.isPublicImplicit);
 
 function identity<T>(input: T) {
     return input;
-}
+};
 
 const numeric = identity(666);
 console.log(numeric);
 
 const stringy = identity("Generic");
 console.log(stringy);
+
+function gen<T>(a: T, b: T): T[] {
+    return [a, b]
+}
+
+console.log(gen<number>(2, 2));
+console.log(gen<string>("2", "2"));
+console.log(gen<Array<number>>([2], [4]));
+
+function addUser<T>(user: T) {
+    return user;
+}
+
+console.log(addUser<string>("AHM X ETH"));
 
 const generic = <T>(input: T) => input;
 console.log(generic(1234));
@@ -1247,14 +1245,6 @@ class Bug {
 const bug = new Bug("Needs Dark Mode");
 console.log(bug.title);
 console.log(bug.type);
-
-function logClassWithArgs(filter: Object) {
-    return (target: Object) => {
-        console.log(target, filter);
-    }
-};
-
-@logClassWithArgs({ when: { name: "Bitcoin" } })
 
 class Person {
 

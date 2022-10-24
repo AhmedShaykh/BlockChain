@@ -1,4 +1,4 @@
-export const metaVerse: string = "Panaverse";
+export const metaVerse: string = "PanaVerse";
 
 export interface Course {
     name?: string;
