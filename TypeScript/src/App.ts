@@ -37,7 +37,7 @@ export const course: Course = {
     classDay: "Wednesday",
     startUp: "DAO",
     classTiming: 6
-}
+};
 
 console.log(metaVerse);
 console.log(course);
@@ -93,11 +93,15 @@ console.log(literal);
 literal = 44;
 console.log(literal);
 
-let science: number | string;
-science = Math.random() > 0.5 ? "Science" : 404;
+let science: "Computer" | "Chemistry";
+science = Math.random() > 0.5 ? "Computer" : "Chemistry";
 
-if (science === "science") {
-    science.toUpperCase();
+if (science == "Computer") {
+    console.log(science.toUpperCase());
+}
+
+else {
+    console.log(science.toLowerCase());
 }
 
 console.log(science);
@@ -151,7 +155,7 @@ let engineer: {
 engineer = {
     born: 1999,
     name: "Elon Musk"
-}
+};
 
 console.log(engineer);
 console.log(engineer.name);
@@ -207,7 +211,7 @@ const namOnlyOne: FirstAndLastNames = {
 };
 
 console.log(namOnlyOne);
-console.log(`Nawaz Sharif Ki Beti ` + namOnlyOne.last);
+console.log(`Nawaz Sharif Ki Beti ` + namOnlyOne.last + ` Hai`);
 
 let transGender: string | boolean = true;
 
@@ -296,7 +300,7 @@ const missingWriters: Writers = {
 const hasWriters: Writers = {
     author: "William Shakespeare",
     editor: "Adobe"
-}
+};
 
 console.log(missingWriters);
 console.log(hasWriters);
@@ -418,7 +422,7 @@ function announceSong(song: string, singer?: string) {
 announceSong("Dreamer");
 announceSong("On My Way", "Sabrina Carpenter");
 
-function announceSongBy(song: string, singer: string | undefined) {
+function announceSongBy(song: string, singer?: string | undefined) {
     console.log(`Song: ${song}`);
 
     if (singer) {
@@ -452,8 +456,6 @@ function technoTrance(techno: string[]) {
     for (let trance of techno) {
         console.log(`${trance}`);
     }
-
-    return techno.length;
 }
 
 technoTrance(["Will Sparks - L.S.D", "MADDIX - Formula"]);
@@ -569,7 +571,7 @@ console.log(createStrings());
 
 let arrayTS: (string | number)[];
 arrayTS = ["Data", "Type", 345, 864];
-console.log(arrayTS)
+console.log(arrayTS);
 
 let arrayVar: string | number[];
 arrayVar = [1, 2, 3, 4], "Pakistan";
@@ -612,7 +614,7 @@ logWarriors("Hello", ...warriors);
 
 // ========== Tuple ========== //
 
-let tuple: [number, string] = [4, "TenUp"];
+let tuple: [number, string] = [4, "SOLANA"];
 console.log(tuple);
 
 let tupleValue: [number, number] = [4, 6];

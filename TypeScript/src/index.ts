@@ -5,4 +5,4 @@ export interface Course {
     classDay?: string;
     startUp?: string;
     classTiming: number
-}
+};
