@@ -18,7 +18,6 @@ console.log(boolean);
 
 let nam: string = "Ahmed Shaykh";
 nam = "Ahmed Shaikh";
-
 console.log(nam);
 
 let rocket: string = "Rocket";
@@ -29,8 +28,7 @@ let myName: string;
 myName = "Ahmed Saleem Shaikh";
 console.log(myName);
 
-import { metaVerse } from "./index";
-import { Course } from "./index";
+import { metaVerse, Course } from "./index";
 
 export const course: Course = {
     name: "Web 3 & Metaverse Developer",
@@ -136,7 +134,7 @@ console.log(rawDataThird = 4000);
 type Id = boolean | string;
 type IdMaybe = Id | undefined | null;
 
-let typeFirst: IdMaybe;
+let typeFirst: Id;
 let typeSecond: IdMaybe;
 let typeThird: IdMaybe;
 let typeFourth: IdMaybe;
