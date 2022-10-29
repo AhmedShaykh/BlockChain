@@ -260,7 +260,7 @@ type Writer = {
     name: string;
 };
 
-const poemMismatch: Poem = {
+const poemMismatch: Writer = {
     author: {
         firstName: "Abdul Dayyan",
         lastName: "Ali Khan"
@@ -463,7 +463,7 @@ function getSongAt(songs: string, index: number) {
     return index < songs.length ? songs[index] : undefined;
 }
 
-console.log(getSongAt("Revealed", 4));
+console.log(getSongAt("Ghost", 4));
 
 function getSongRecordingDate(song: string): Date | undefined | string {
     switch (song) {
@@ -616,7 +616,7 @@ logWarriors("Hello", ...warriors);
 let tuple: [number, string] = [4, "SOLANA"];
 console.log(tuple);
 
-let tupleValue: [number, number] = [4, 6];
+let tupleValue: [number, number, string] = [4, 6, "DAI"];
 console.log(tupleValue);
 
 let [year, warrior] = Math.random() > 0.5
