@@ -6,4 +6,5 @@ const prompt = PromptSync();
 let data = prompt("Enter Your Name: ");
 console.log(data);
 
-console.log(addTwo(4));
+let num = Number(prompt("Enter Your Number: "));
+console.log(addTwo(num));
