@@ -11,6 +11,7 @@ let arr4 = [10];
 console.log(arr4);
 
 let arr = ["Hi Dear", 5, true];
+
 console.log(typeof arr[0]);
 console.log(typeof arr[1]);
 console.log(typeof arr[2]);
@@ -22,11 +23,10 @@ console.log(arrx[0]);
 arrx[0] = "New Value";
 console.log(arrx[0]);
 
-
-const cars = ["Bugatti", "Civic", "Volkswagen"];
+const cars = ["Bugatti", "Civic", "Suzuki"];
 cars.pop();
-console.log(cars[0]);
 console.log(cars);
+console.log(cars[0]);
 console.log(cars[-1]);
 
 cars[0] = "Tesla";
@@ -35,7 +35,7 @@ console.log(cars[0]);
 console.log(cars);
 
 cars[2] = "Kia";
-cars[2] = "Lambo";
+cars[3] = "Lambo";
 
 console.log(cars);
 
@@ -63,7 +63,7 @@ console.log("numbers", numbers);
 let favoriteFruits = ["grapefruit", "orange", "lemon"];
 console.log(favoriteFruits);
 
-let lengthOfFavoriteFruits = favoriteFruits.push("lime");
+let lengthOfFavoriteFruits = favoriteFruits.push("lime", "mango");
 
 console.log(lengthOfFavoriteFruits);
 
@@ -82,7 +82,9 @@ console.log(arr7);
 let arr8 = arr7.concat(7, 8, 9);
 console.log(arr8);
 
-arr8.shift();
+let arr9 = arr8.shift();
+console.log(arr9);
+
 console.log(arr8);
 
 arr8.splice(1, 3);
@@ -102,7 +104,7 @@ let findIndex2 = arr8.indexOf(10);
 
 console.log(findIndex, findIndex2);
 
-let findIndex3 = arr8.indexOf(6, 0); // (Search + Start)
+let findIndex3 = arr8.indexOf(7, 1); // (Search + Start)
 console.log(findIndex3);
 
 let animals = ["dog", "horse", "cat", "platypus", "rabbit"];
