@@ -38,6 +38,7 @@ switch (grade) {
         console.log("You've passed!");
         break;
     case "A":
+    case "A+":
         console.log("Nice!");
         break;
     default:

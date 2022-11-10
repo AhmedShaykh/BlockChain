@@ -2,9 +2,7 @@
 
 let company = {
     companyName: "Healthy Candy",
-    activities: ["food manufacturing",
-        "improving kids' health",
-        "manufacturing toys"],
+    activities: ["food manufacturing", "improving kids' health", "manufacturing toys"],
     address: {
         street: "2nd street",
         number: "123",
@@ -14,6 +12,8 @@ let company = {
     },
     yearOfEstablishment: 2021
 };
+
+console.log(company);
 
 let activity = company.activities[1];
 console.log(activity);
