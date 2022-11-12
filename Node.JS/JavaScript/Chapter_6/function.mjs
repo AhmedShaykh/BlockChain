@@ -27,7 +27,7 @@ function addTwoNumbers(x, y) {
 };
 
 addTwoNumbers(4, 56);
-addTwoNumbers("Twitter", 1);
+addTwoNumbers("Twitter ", 1);
 
 function addNumbers(x = 2, y = 3) {
     console.log(x + y);

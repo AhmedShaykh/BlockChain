@@ -10,8 +10,7 @@ function returnArr() {
     let resultsArr = [];
 
     for (let i = 0; i < 10; i++) {
-        let result = addTwoNumbers(i, 2 * i);
-        resultsArr.push(result);
+        resultsArr.push(i);
     };
 
     console.log(resultsArr);

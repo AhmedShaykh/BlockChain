@@ -2,12 +2,6 @@
     console.log("Not so secret though.");
 })();
 
-let functionVariable = function () {
-    console.log("secret though.");
-};
-
-functionVariable();
-
 // =========== SetTimeOut Function =========== //
 
 let youGotThis = function () {

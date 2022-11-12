@@ -1,4 +1,5 @@
 const arrow = () => console.log("Arrow Function");
+
 arrow();
 
 const arrowAdd = (arg, arg2) => arg + arg2;
