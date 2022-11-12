@@ -52,3 +52,39 @@ function getGrade(score, callback) {
 };
 
 getGrade(85, judge);
+
+function printToken(msg, alertToken) {
+    if (msg === 'Bitcoin') {
+        btc(alertToken)
+    }
+    else if (msg === 'Ethereum') {
+        eth(alertToken)
+    }
+    else if (msg === 'Solana') {
+        sol(alertToken)
+    }
+    else {
+        console.log('No Data Here!')
+    }
+};
+
+function btc(alertToken) {
+    alertToken("Hello Bitcoin")
+    console.log("Buy & Sell Bitcoin");
+};
+
+function eth(alertToken) {
+    alertToken("Hello Ethereum")
+    console.log("Buy & Sell Ethereum");
+};
+
+function sol(alertToken) {
+    alertToken("Hello Solana")
+    console.log("Buy & Sell Solana");
+};
+
+function alertToken(msg) {
+    console.log(msg);
+};
+
+printToken("Solana", alertToken);
