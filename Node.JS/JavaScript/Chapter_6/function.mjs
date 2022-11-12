@@ -29,10 +29,10 @@ function addTwoNumbers(x, y) {
 addTwoNumbers(4, 56);
 addTwoNumbers("Twitter", 1);
 
-function sayHello(namePorp) {
-
-    rconsole.log(`Hello ${namePorp}!`);
-
+function addNumbers(x = 2, y = 3) {
+    console.log(x + y);
 };
 
-export { sayHello };
+addNumbers();
+addNumbers(6, 6);
+addNumbers(10);
