@@ -1,5 +1,5 @@
-import PromptSync from "prompt-sync";
 import { addTwo } from "./app.mjs";
+import PromptSync from "prompt-sync";
 
 const prompt = PromptSync();
 
