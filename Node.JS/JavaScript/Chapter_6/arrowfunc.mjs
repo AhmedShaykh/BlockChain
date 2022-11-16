@@ -20,7 +20,7 @@ console.log(addTwoNumbers("Imran ", "Khan"));
 
 let sayHi = () => {
 
-    const arr = ["squirrel", "alpaca", "buddy"];
+    const arr = ["Ali", "Adeel", "Abdul Rehman"];
     arr.forEach(e => console.log(e));
 
 };

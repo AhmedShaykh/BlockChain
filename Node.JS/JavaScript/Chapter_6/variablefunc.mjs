@@ -6,12 +6,12 @@ function testAvailability() {
     return y;
 };
 
-let z = testAvailability();
-console.log("Outside the function:", z);
+let y = testAvailability();
+console.log("Outside the function:", y);
 
 function doingStuff() {
     if (true) {
-        let x = "Var Local"; // PUT Let Result will be Error
+        var x = "Var Local"; // PUT Let Result will be Error
     }
 
     console.log(x);
@@ -42,11 +42,11 @@ doingStuffX();
 let globalVar = "Accessible everywhere!";
 console.log("Outside function:", globalVar);
 
-function creatingNewScope(x) {
+function creatingNewScope() {
     console.log("Access to global vars inside function:", globalVar);
 };
 
-creatingNewScope("some parameter");
+creatingNewScope();
 console.log("Still available:", globalVar);
 
 let x = "global";
