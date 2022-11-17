@@ -20,7 +20,7 @@ promises().then(() => {
 });
 
 let promise = new Promise(function (resolve, reject) {
-    let x = 1;
+    let x = 20;
     if (x > 10) {
         resolve(x); // On Success
     } else {
@@ -37,7 +37,7 @@ promise.then(
 );
 
 const mypromise = new Promise((resolve, reject) => {
-    resolve("success!");
+    resolve("Success!");
 })
     .then(value => {
         console.log(value);
@@ -63,7 +63,7 @@ const mypromise = new Promise((resolve, reject) => {
     });
 
 const promisex = new Promise((resolve, reject) => {
-    reject("oops... ");
+    reject("Oops... ");
 })
     .then(value => {
         console.log(value);
@@ -87,3 +87,18 @@ const promisex = new Promise((resolve, reject) => {
     .catch(value => {
         console.log(value);
     });
+
+new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        resolve('Completed');
+    }, 2000);
+})
+    .finally(() => console.log('Done'))
+    .then(result => console.log(result));
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+delay(2000)
+    .then(() => console.log('Running After 2 seconds'));
