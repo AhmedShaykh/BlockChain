@@ -41,6 +41,6 @@ async function funcAsync() {
 
     let result = await promise;
     console.log(result);
-}
+};
 
 funcAsync();
