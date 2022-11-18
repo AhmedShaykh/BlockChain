@@ -40,3 +40,5 @@ company.address.zipcode = "33117";
 company["address"]["number"] = "100";
 
 console.log(company);
+
+console.dir(company);
