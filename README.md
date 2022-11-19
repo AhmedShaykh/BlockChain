@@ -1,1 +1,1 @@
-# Learning Certified WEB 3, BlockChain & Metaverse Developer!
+# Learning WEB 3, BlockChain & Metaverse!
