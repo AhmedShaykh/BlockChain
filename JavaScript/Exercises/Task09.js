@@ -15,15 +15,15 @@ function job() {
 };
 
 function doSomething(data) {
-    console.log("Data");
+    console.log("Data " + data);
 };
 
 let promise = request();
 
 promise.then(function (data) {
-    console.log(data);
+    console.log("Data: " + data);
 }).catch(function (error) {
-    console.log(error);
+    console.log("Error: " + error);
 });
 
 function request() {

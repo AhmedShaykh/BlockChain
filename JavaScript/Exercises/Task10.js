@@ -1,23 +1,19 @@
 function request() {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
-            resolve("Resolve!");
+            reject("Reject!");
         }, 1000);
-        reject("Reject!");
+        resolve("Resolve!");
     });
 };
 
 let promise = request();
 
-try {
-    promise.then(function (data) {
-        console.log(data);
-    }).catch(function (error) {
-        console.log(error);
-    })
-} catch (error) {
+promise.then(function (data) {
+    console.log(data);
+}).catch(function (error) {
     console.log(error);
-};
+});
 
 function job() {
     return new Promise(function (resolve, reject) {
@@ -45,4 +41,8 @@ promisex.then(function () {
 
     .then(function () {
         console.log('Success 4');
+    })
+
+    .catch(function () {
+        console.log('Error 2');
     });

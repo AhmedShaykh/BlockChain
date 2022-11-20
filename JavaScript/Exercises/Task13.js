@@ -15,16 +15,16 @@ function getToastPromise() {
 
 function friedEggPromise() {
     return new Promise((resolve, reject) => {
-        let cookMood = 7;
+        let cookMood = 4;
 
         setTimeout(() => {
-            if (cookMood >= 5) {
+            if (cookMood >= 3) {
                 resolve("Egg is Ready");
             }
             else {
                 reject("I'm in a Bad Mood")
             }
-        }, 3000);
+        }, 1000);
     });
 };
 

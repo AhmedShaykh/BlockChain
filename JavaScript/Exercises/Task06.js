@@ -4,7 +4,6 @@ promise.then(function (data1) {
     console.log('data 1', data1);
     return job2();
 })
-
     .then(function (data2) {
         console.log('data 2', data2);
         return 'Hello world';

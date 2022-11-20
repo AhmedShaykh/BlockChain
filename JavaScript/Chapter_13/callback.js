@@ -3,7 +3,7 @@ function doSomething(callback) {
 };
 
 function sayHi() {
-    console.log("Hi!");
+    console.log("Say Hi!");
 };
 
 doSomething(sayHi);
@@ -35,7 +35,6 @@ function getGrade(score, callback) {
             grade = "A";
             break;
         case score >= 80:
-            console.log(score);
             grade = "B";
             break;
         case score >= 70:

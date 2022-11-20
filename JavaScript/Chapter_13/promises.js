@@ -55,6 +55,9 @@ const mypromise = new Promise((resolve, reject) => {
         console.log(value);
         return "promises";
     })
+    .catch(value => {
+        console.log(value);
+    })
     .then(value => {
         console.log(value);
     })
@@ -86,7 +89,14 @@ const promisex = new Promise((resolve, reject) => {
     })
     .catch(value => {
         console.log(value);
-    });
+        return "Rejected Promise!";
+    })
+    .catch(value => {
+        console.log(value);
+    })
+    .then(value => {
+        console.log("Then: " + value);
+    })
 
 new Promise(function (resolve, reject) {
     setTimeout(() => {
@@ -100,5 +110,4 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-delay(2000)
-    .then(() => console.log('Running After 2 seconds'));
+delay(2000).then(() => console.log('Running After 2 seconds'));

@@ -1,13 +1,3 @@
-console.log("Hi there");
-
-setTimeout(() => console.log("Sorry I'm late"), 1000);
-
-console.log(add(5, 5));
-
-function add(x, y) {
-    return x + y;
-};
-
 function addnum(a, b) {
     return a + b;
 };

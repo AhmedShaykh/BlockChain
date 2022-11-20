@@ -49,7 +49,7 @@ let obj1 = {
         console.log(`You have ${this.meeting} Meetings Left`);
     },
     resetMeeting() {
-        this.meeting = this.meeting = 'No';
+        this.meeting = 0;
     },
     meetLeft() {
         console.log(`You have ${this.meeting} Meeting ...!`);

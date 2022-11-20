@@ -7,19 +7,19 @@ function job1(callback) {
 function job2(callback) {
     setTimeout(function () {
         callback('test 2');
-    }, 4000);
+    }, 2000);
 };
 
 function job3(callback) {
     setTimeout(function () {
         callback();
-    }, 2000);
+    }, 1000);
 };
 
 function job4(callback) {
     setTimeout(function () {
         callback();
-    }, 1000);
+    }, 2000);
 };
 
 job1(function (data) {
