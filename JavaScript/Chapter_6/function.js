@@ -7,8 +7,8 @@ function nameOfTheFunction(learn) {
 var learn;
 
 let varContainingFunction = function () {
-    let varInFunction = "I'm in a function.";
-    console.log("hi there!", varInFunction);
+    let varInFunction = "I'm in a Function.";
+    console.log("Hi There!", varInFunction);
 };
 
 varContainingFunction();

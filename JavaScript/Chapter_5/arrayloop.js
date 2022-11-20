@@ -7,25 +7,26 @@ for (let i = 0; i < names.length; i++) {
 let namesarr = ["Chantal", "John", "Maxime", "Bobbi", "Jair"];
 
 for (let i = 0; i < namesarr.length; i++) {
-    console.log(namesarr[i] = "Hello " + namesarr[i]);
+    console.log("Hello " + namesarr[i]);
 };
 
 let students = ["Chantal", "John", "Maxime", "Bobbi", "Jair"];
 
 for (let i = 0; i < students.length; i++) {
+
     if (students[i].startsWith("B")) {
-        delete names[i];
+        delete students[i];
         continue;
     };
-    students[i] = "hello " + students[i];
+
 };
 
-console.log(names);
+console.log(students);
 
 let frameWork = ['React', 'Next', 'Ether', 'Node'];
 
 frameWork.forEach(function (e) {
-    console.log('Working In ' + e + ' JS')
+    console.log('Working In ' + e + '.JS')
 });
 
 let num = [18, 56, 98];

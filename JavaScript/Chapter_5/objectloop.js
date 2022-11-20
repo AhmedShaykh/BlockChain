@@ -11,7 +11,7 @@ for (let prop in car) {
 
 let founder = {
     name: 'Ahmed',
-    salary: "$10000000",
+    worth: "$10000000000",
 };
 
 for (let key in founder) {

@@ -1,6 +1,6 @@
 let message = (x, y, z) => console.log(`JavaScript is ${x}, ${y}, ${z}`);
 
-let spread = ["so", "much", "fun"];
+let spread = ["So", "Much", "Fun"];
 
 message(...spread);
 

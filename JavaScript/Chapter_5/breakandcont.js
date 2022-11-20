@@ -11,7 +11,7 @@ let cars = [
         model: "Golf",
         make: "Volkswagen",
         year: 1999,
-        color: "black",
+        color: "white",
     },
     {
         model: "Picanto",
@@ -54,10 +54,14 @@ for (let i = 0; i <= 10; i++) {
 };
 
 for (let car of cars) {
+
     if (car.color !== "black") {
+        console.log("we could get this one:", car);
         continue;
     }
+
     if (car.year >= 2020) {
         console.log("we could get this one:", car);
     }
+
 };

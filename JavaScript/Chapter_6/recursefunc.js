@@ -24,7 +24,7 @@ function logRecursive(nr) {
     console.log("Ended function:", nr);
 };
 
-logRecursive(1);
+logRecursive(2);
 
 function factorial(nr) {
 

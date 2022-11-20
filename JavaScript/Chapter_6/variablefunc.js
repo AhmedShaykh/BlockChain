@@ -59,21 +59,22 @@ function doingstuff() {
 doingstuff();
 console.log(x);
 
-let a = "global";
+let a = "Global";
 
 function stuff(a) {
     console.log(a);
 };
 
 stuff("Param");
+stuff(a);
 
 function confuseReader() {
-    x = "Guess my scope...";
-    console.log("Inside the function:", x);
+    val = "Guess my scope...";
+    console.log("Inside the function:", val);
 };
 
 confuseReader();
-console.log("Outside of function:", x);
+console.log("Outside of function:", val);
 
 // ========= Invoked Function ========= //
 

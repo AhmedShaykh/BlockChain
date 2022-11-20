@@ -5,14 +5,14 @@
 // =========== SetTimeOut Function =========== //
 
 let youGotThis = function () {
-    console.log("You're doing really well, keep coding!");
+    console.log("You're doing really well, Keep Coding!");
 };
 
 setTimeout(youGotThis, 1000);
 
 function timer() {
     setTimeout(() => {
-        console.log("Delayed for 1 second.");
+        console.log("Delayed for 3 second.");
     }, 3000);
 }
 
@@ -20,15 +20,8 @@ timer();
 
 // =========== Closure Function =========== //
 
-let a = 4;
-
-console.log(myFunction());
-
-function myFunction() {
-    return a * a;
-};
-
 function makeFunc() {
+
     const name = 'Mozilla';
 
     return function displayName() {
