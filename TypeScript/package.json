@@ -16,11 +16,7 @@
     "url": "https://github.com/AhmedShaykh/BlockChain/issues"
   },
   "homepage": "https://github.com/AhmedShaykh/BlockChain/tree/main#readme",
-  "dependencies": {
-    "chalk": "^5.1.2",
-    "inquirer": "^9.1.4"
-  },
   "devDependencies": {
-    "@types/inquirer": "^9.0.3"
+    "@types/node": "^18.11.9"
   }
 }
