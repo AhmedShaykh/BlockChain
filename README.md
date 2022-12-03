@@ -1,1 +1,1 @@
-# Learning WEB 3, BlockChain & Metaverse!
+# Learning BlockChain & WEB 3.0!
