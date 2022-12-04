@@ -2,7 +2,7 @@
 /node_modules
 
 # production
-/JS
+/bin
 
 npm-debug.log*
 yarn-debug.log*
