@@ -1,0 +1,1 @@
+npx ahmx-ts

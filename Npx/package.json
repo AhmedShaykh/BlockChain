@@ -1,6 +1,6 @@
 {
   "name": "ahmx-ts",
-  "version": "1.0.4",
+  "version": "2.0.2",
   "type": "module",
   "main": "bin/index.js",
   "scripts": {
