@@ -14,9 +14,9 @@ for (e of num) {
 
 // ============= Map ============= //
 
-let arr = [3, 4, 5, 6];
+let arr = [2, 4, 5, 6];
 
-let modifiedArr = arr.map(function (element) {
+let modifiedArr = arr.map(element => {
     return element * 3;
 });
 
@@ -67,7 +67,34 @@ console.log(elements.join('-'));
 
 // ============= Every ============= //
 
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const isBelowThreshold2 = (currentValue) => currentValue <= 40;
+
+const arrayEvery = [1, 30, 39, 29, 10, 13, 40];
+
+console.log(arrayEvery.every(isBelowThreshold));
+
+console.log(arrayEvery.every(isBelowThreshold2));
+
 // ============= Filter ============= //
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+
+function canVote(age) {
+    return age >= 18;
+};
+
+function func() {
+    let filtered = [24, 33, 16, 40].filter(canVote);
+    console.log(filtered);
+};
+
+func();
 
 // ============= Reduce ============= //
 
