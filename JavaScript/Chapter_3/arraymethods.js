@@ -85,18 +85,26 @@ const result = words.filter(word => word.length > 6);
 
 console.log(result);
 
-function canVote(age) {
-    return age >= 18;
-};
+const numbers = [4, 5, 8, 4, 7, 2, 8, 4, 9];
 
-function func() {
-    let filtered = [24, 33, 16, 40].filter(canVote);
-    console.log(filtered);
-};
+const result2 = numbers.filter(number => number >= 4);
 
-func();
+console.log(result2);
 
 // ============= Reduce ============= //
+
+const arrayReduce = [1, 2, 3, 4];
+
+const initialValue = 0;
+
+const sumWithInitial = arrayReduce.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    initialValue
+);
+
+console.log(sumWithInitial);
+
+// ============= toString ============= //
 
 // ============= At ============= //
 
@@ -105,5 +113,3 @@ func();
 // ============= Some ============= //
 
 // ============= Split ============= //
-
-// ============= toString ============= //
