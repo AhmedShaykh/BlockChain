@@ -95,16 +95,31 @@ console.log(result2);
 
 const arrayReduce = [1, 2, 3, 4];
 
-const initialValue = 0;
+let tempNum = 0;
+
+arrayReduce.forEach(num => {
+    tempNum += num
+});
+
+console.log(tempNum);
+
+const initialValue = 1;
 
 const sumWithInitial = arrayReduce.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,
-    initialValue
+    (previousValue, currentValue) => previousValue * currentValue, initialValue
 );
 
 console.log(sumWithInitial);
 
 // ============= toString ============= //
+
+const intArray = [1, 2, 3, 4, 5];
+
+console.log(intArray.toString());
+
+const stringArray = ['Bill', 'Elon', 'Steve'];
+
+console.log(stringArray.toString());
 
 // ============= At ============= //
 
