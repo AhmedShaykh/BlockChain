@@ -34,9 +34,9 @@ console.log(array3);
 
 // ============= Splice ============= //
 
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const fruits = ["Banana", "Orange", "Apple", "Kiwi"];
 
-fruits.splice(2, 0, "Lemon", "Kiwi");
+fruits.splice(3, 1, "Lemon", "Mango");
 
 console.log(fruits);
 
@@ -111,6 +111,30 @@ const sumWithInitial = arrayReduce.reduce(
 
 console.log(sumWithInitial);
 
+// ============= Reverse ============= //
+
+const arrNum = ['one', 'two', 'three'];
+const reversed = arrNum.slice().reverse();
+
+console.log(`Reverse: ${reversed}`);
+console.log(`Orginal: ${arrNum}`);
+
+// ============= Sort ============= //
+
+const months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+
+console.log(months);
+
+let arrSort = [1, 30, 4, 21, 100000];
+arrSort.sort();
+
+console.log(arrSort);
+
+arrSort.sort((x, y) => x - y);
+
+console.log(`Real Sort: ${arrSort}`);
+
 // ============= toString ============= //
 
 const intArray = [1, 2, 3, 4, 5];
@@ -123,8 +147,42 @@ console.log(stringArray.toString());
 
 // ============= At ============= //
 
+const array4 = [5, 12, 8, 130, 44];
+
+console.log(array4.at(2));
+console.log(array4.at(-2));
+
 // ============= Find ============= //
+
+const arrayFind = [5, 12, 8, 130, 44];
+
+const found = arrayFind.find(element => element > 10);
+
+console.log(found);
 
 // ============= Some ============= //
 
+const arraySome = [1, 2, 3, 4, 5];
+
+const some = arraySome.some(element => element > 10);
+
+console.log(some);
+
+const some2 = arrayFind.some(element => element > 10);
+
+console.log(some2);
+
 // ============= Split ============= //
+
+let arrayMessage = ["FIRST", "YOU", "LEARN", "THEN", "YOU", "REMOVE", "THE", "L"];
+
+console.log(arrayMessage[0]);
+console.log(arrayMessage[1]);
+console.log(arrayMessage[2]);
+console.log(arrayMessage[3]);
+console.log(arrayMessage[4]);
+console.log(arrayMessage[5]);
+console.log(arrayMessage[6]);
+console.log(arrayMessage[7]);
+
+console.log("EARN");
