@@ -1,7 +1,7 @@
 let arr1 = new Array("Purple", "Green", "Yellow");
 console.log(arr1);
 
-let arr2 = ["Black", "Orange", "Pink"];
+let arr2 = ["Black", "Orange", "Blue"];
 console.log(arr2);
 
 let arr3 = new Array(10);
@@ -107,7 +107,7 @@ console.log(findIndex, findIndex2);
 let findIndex3 = arr8.indexOf(7, 1); // (Search + Start)
 console.log(findIndex3);
 
-let animals = ["dog", "horse", "cat", "platypus", "rabbit"];
+let animals = ["dog", "horse", "cat", "tiger", "rabbit"];
 let lastDog = animals.lastIndexOf("dog");
 console.log(lastDog);
 
@@ -122,7 +122,7 @@ console.log(ages.reverse());
 let dev = ['Joe', 'Morten', 'David', 'Jack', 'Christian', 'Chris'];
 console.log(dev);
 
-let ceo = dev.slice(0, 4);
+let ceo = dev.slice(1, 4);
 console.log(ceo);
 
 let cto = dev.slice(-3, -1);

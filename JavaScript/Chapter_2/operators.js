@@ -14,11 +14,13 @@ let result2 = str3 - nr3;
 console.log(result1, result2);
 
 let str4 = "6";
+let str5 = "6";
 
 result1 = nr1 * nr2;
 result2 = str4 * nr3;
+var resultx = str5 - nr3;
 
-console.log(result1, result2);
+console.log(result1, result2, resultx);
 
 result1 = nr1 / nr2;
 result2 = str4 / nr3;

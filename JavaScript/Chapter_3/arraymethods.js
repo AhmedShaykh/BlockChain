@@ -32,17 +32,33 @@ const array3 = array1.concat(array2);
 
 console.log(array3);
 
+// ============= Shift ============= //
+
+let fruitShift = ["Banana", "Orange", "Apple", "Kiwi"];
+
+fruitShift.shift();
+
+console.log(fruitShift);
+
+// ============= UnShift ============= //
+
+let fruitUnShift = ["Banana", "Orange", "Apple", "Kiwi"];
+
+fruitUnShift.unshift("Mango");
+
+console.log(fruitUnShift);
+
 // ============= Splice ============= //
 
-const fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+let fruits = ["Banana", "Orange", "Apple", "Kiwi"];
 
-fruits.splice(3, 1, "Lemon", "Mango");
+fruits.splice(3, 1, "Lemon", "Blueberry");
 
 console.log(fruits);
 
 // ============= Slice ============= //
 
-const animals = ['Cat', 'Dog', 'Camel', 'Duck', 'elephant'];
+const animals = ['Cat', 'Dog', 'Camel', 'Duck', 'Elephant'];
 
 console.log(animals.slice(2));
 
@@ -171,18 +187,3 @@ console.log(some);
 const some2 = arrayFind.some(element => element > 10);
 
 console.log(some2);
-
-// ============= Split ============= //
-
-let arrayMessage = ["FIRST", "YOU", "LEARN", "THEN", "YOU", "REMOVE", "THE", "L"];
-
-console.log(arrayMessage[0]);
-console.log(arrayMessage[1]);
-console.log(arrayMessage[2]);
-console.log(arrayMessage[3]);
-console.log(arrayMessage[4]);
-console.log(arrayMessage[5]);
-console.log(arrayMessage[6]);
-console.log(arrayMessage[7]);
-
-console.log("EARN");
