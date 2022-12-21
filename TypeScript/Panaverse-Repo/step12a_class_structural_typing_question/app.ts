@@ -10,6 +10,9 @@ class Human {
     }
 }
 
+const d = new Human("Ahmed");
+console.log(d.name);
+
 class Animal {
     name: string;
     
@@ -88,6 +91,3 @@ console.log("Is Donkey a Animal: " + isItAnimal);//true, giving the right result
 
 //Now it is your reposibility to figure out 
 //why the above code is not giving an Error?
-
-
-
