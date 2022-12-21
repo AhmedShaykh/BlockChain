@@ -74,3 +74,6 @@ student3.course = teacher.course;
 const stdArray: StudentClass[] = [student1, student2, student3];
 course.students = stdArray;
 console.log(course);
+
+teacher.timing =  "10-11";
+console.log(course);
