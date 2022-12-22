@@ -3,7 +3,7 @@ let myname: string | null;
 myname = null;
 console.log(myname);
 
-myname = "zia";
+myname = "Zia";
 console.log(myname);
 
 //myname = undefined; //Error
@@ -11,71 +11,71 @@ console.log(myname);
 
 let myAge: string | number;
 
-myAge = 16;//narrowing
+myAge = 15.6;//narrowing
 console.log(myAge);
-
-//console.log(myAge.toLowerCase());//Error
+console.log(myAge.toFixed());
 
 myAge = "Dont Know";//narrowing
 console.log(myAge);
+console.log(myAge.toUpperCase());
 
 console.log(myAge.toString()); // common to both types 
-                               //can be called even without narrowing
+//can be called even without narrowing
 
 console.log(myAge.toLowerCase());//Can be called on string 
-                                //because of narrowing
+//because of narrowing
 
-let newAge = Math.random() > 0.6 ? "Khan": 60;
+let newAge = Math.random() > 0.6 ? "Khan" : 0.9;
 
 //newAge.toLowerCase();//Error: Transpiler cannot narrow
 
-if (newAge === "Khan") {
-    // Type of newAge: string
-    newAge.toUpperCase(); // Can be called
-}
+let newValue = typeof newAge === "string"
+    ? newAge.toUpperCase() // Ok: string
+    : newAge.toFixed(); // Ok: number
 
-if(typeof newAge === "string"){
-    // Type of newAge: string
-    newAge.toUpperCase(); // Can be called
-}
-
-typeof newAge === "string"
-? newAge.toUpperCase() // Ok: string
-: newAge.toFixed(); // Ok: number
-
+console.log(newValue);
 
 let age: number | "died" | "unknown";
 
 age = 90;//OK
 age = "died";//OK
 age = "unknown";//OK
-//age = "living";//Error
+// age = "living";//Error
 
+console.log(age);
 
-let zia: "zia";
+let zia: "Zia";
 
-zia = "zia";
+zia = "Zia";
+console.log(zia);
 //zia = "khan";//Error
 
-
-let yourName = Math.random() > 0.6 ? "Hira Khan": undefined;
+let yourName = Math.random() > 0.6 ? "Dayyan Khan" : undefined;
 
 if (yourName) {
     yourName.toUpperCase(); // Ok: string
-}
+};
 
 //yourName.toUpperCase();//Error: Object is possibly 'undefined'.
 
-yourName?.toUpperCase();//OK
+console.log(yourName?.toUpperCase());//OK
 
 // You can also define a type alias
 type RawData = boolean | number | string | null | undefined;
 
-let data: RawData;
-
-// You can even combine them
+let rawDataFirst: RawData = "String";
+console.log(rawDataFirst);
+let rawDataSecond: RawData = undefined;
+console.log(rawDataSecond);
+let rawDataThird: RawData = null;
+console.log(rawDataThird);
 
 type Id = number | string;
 
 type IdMaybe = Id | undefined | null;
 
+let data: IdMaybe = 4;
+console.log(data);
+
+data = null;
+console.log(data);
