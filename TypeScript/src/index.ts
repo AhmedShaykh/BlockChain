@@ -134,3 +134,32 @@ console.log(typeFirst = 'Ahmed');
 console.log(typeSecond);
 console.log(typeThird = null);
 console.log(typeFourth = false);
+
+// ========== Objects ========== //
+
+let engineer: {
+    born: number;
+    name: string;
+};
+
+engineer = {
+    born: 1999,
+    name: "Elon Musk"
+};
+
+console.log(engineer);
+console.log(engineer.name);
+
+type Poet = {
+    year: number;
+    name: string;
+};
+
+let poetLater: Poet;
+
+poetLater = {
+    year: 2001,
+    name: "Dayyan",
+};
+
+console.log(poetLater);
