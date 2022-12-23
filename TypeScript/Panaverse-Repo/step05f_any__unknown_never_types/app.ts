@@ -12,7 +12,6 @@ myval = null; // OK
 myval = undefined; // OK
 myval = () => { console.log('Hey again!'); }; // OK
 
-
 //Unknown
 
 let value: unknown;
@@ -27,10 +26,10 @@ value = null; // OK
 value = undefined; // OK
 value = () => { console.log('Hey again!'); }; // OK
 
-
 // Assigning a value of type unknown to variables of other types
 
 let val: unknown;
+// let val: any;
 
 const val1: unknown = val; // OK
 const val2: any = val; // OK
@@ -40,7 +39,6 @@ const val5: string = val; // Will throw error
 const val6: Record<string, any> = val; // Will throw error
 const val7: any[] = val; // Will throw error
 const val8: (...args: any[]) => void = val; // Will throw error
-
 
 // Never
 
@@ -53,6 +51,8 @@ function error(message: string): never {
 function fail() {
   return error("Something failed");
 }
+
+console.log(fail());
  
 // Function returning never must not have a reachable end point
 function infiniteLoop(): never {

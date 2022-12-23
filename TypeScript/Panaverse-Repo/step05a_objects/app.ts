@@ -6,8 +6,8 @@ let teacher = {
 console.log(teacher.name);
 console.log(teacher["experience"]);
 
-
 // Type Declaration
+
 let student : {
     name: string,
     age: number
@@ -20,5 +20,3 @@ student = {
 
 console.log(student["name"]);
 console.log(student.age);
-
-        

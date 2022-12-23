@@ -10,8 +10,11 @@ type Book = {
 
 const myBook : Book = {
     author: {
-        firstName: "Zia",
-        lastName: "Khan"
+        firstName: "Ahmed",
+        lastName: "Shaykh"
     },
     name: "My Best Book"
 }
+
+console.log(myBook);
+console.log(myBook.author);

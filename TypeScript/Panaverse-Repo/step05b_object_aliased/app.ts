@@ -1,4 +1,4 @@
-// anonymous
+// Anonymous
 
 let teacher : {name: string, exp: number} = {
     name: "Zeeshan",
@@ -6,6 +6,7 @@ let teacher : {name: string, exp: number} = {
 }
 
 // Aliased Object Type
+
 type Student = {
     name: string,
     age?: number
@@ -30,4 +31,4 @@ let storeManager: Manager = {
     name: "Bilal"
 }
 
-        
+console.log(storeManager.name);

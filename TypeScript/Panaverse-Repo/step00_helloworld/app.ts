@@ -1,3 +1,2 @@
-let message = "Hello World";// Infering Types, 
-                            //take your cursor on the variable name
+let message = "Hello World";
 console.log(message);
