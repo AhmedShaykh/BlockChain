@@ -1,7 +1,10 @@
 //Tuple types have the advantage that you can accurately describe the type of an array of mixed types
 
-var tuple: [number, string] = [1, "bob"];
-var secondElement = tuple[1];  // secondElement now has type 'string' 
+let tuple: [number, string] = [1, "bob"];
+console.log(tuple);
+
+let secondElement = tuple[1];  // secondElement now has type 'string'
+console.log(secondElement);
 
 // Typically an array contains zero to many objects of a
 // single type. TypeScript has special analysis around
@@ -13,30 +16,25 @@ var secondElement = tuple[1];  // secondElement now has type 'string'
 
 // You can create a tuple using JavaScript's array syntax:
 
-const failingResponse = ["Not Found", 404];
+const failingResponse = ["Not Found", 404, "Fail"];
+console.log(failingResponse);
 
 // but you will need to declare its type as a tuple.
 
 const passingResponse: [string, number] = ["{}", 200];
-
-// If you hover over the two variable names you can see the
-// difference between an array ( (string | number)[] ) and
-// the tuple ( [string, number] ).
-
-// As an array, the order is not important so an item at
-// any index could be either a string or a number. In the
-// tuple the order and length are guaranteed.
+console.log(passingResponse);
 
 if (passingResponse[1] === 200) {
   const localInfo = JSON.parse(passingResponse[0]);
   console.log(localInfo);
-}
+};
 
 // This means TypeScript will provide the correct types at
 // the right index, and even raise an error if you try to
 // access an object at an un-declared index.
 
-passingResponse[2];
+passingResponse[2]; // undefined 
+passingResponse[1];
 
 // A tuple can feel like a good pattern for short bits of
 // connected data or for fixtures.
@@ -57,14 +55,20 @@ const staff: StaffAccount[] = [
 type PayStubs = [StaffAccount, ...number[]];
 
 const payStubs: PayStubs[] = [
-  [staff[0], 250],
-  [staff[1], 250, 260],
-  [staff[0], 300, 300, 300],
+    [staff[0], 250],
+    [staff[1], 250, 260],
+    [staff[2], 300, 300, 400],
 ];
+console.log(payStubs);
 
 const monthOnePayments = payStubs[0][1] + payStubs[1][1] + payStubs[2][1];
+console.log(monthOnePayments);
+
 const monthTwoPayments = payStubs[1][2] + payStubs[2][2];
-const monthThreePayments = payStubs[2][2];
+console.log(monthTwoPayments);
+
+const monthThreePayments = payStubs[2][3];
+console.log(monthThreePayments);
 
 // You can use tuples to describe functions which take
 // an undefined number of parameters with types:
@@ -73,8 +77,3 @@ declare function calculatePayForEmployee(id: number, ...args: [...number[]]): nu
 
 calculatePayForEmployee(staff[0][0], payStubs[0][1]);
 calculatePayForEmployee(staff[1][0], payStubs[1][1], payStubs[1][2]);
-
-//
-// https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#tuples-in-rest-parameters-and-spread-expressions
-// https://auth0.com/blog/typescript-3-exploring-tuples-the-unknown-type/
-

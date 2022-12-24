@@ -5,7 +5,6 @@ function myCallBack(text: string) {
 function callingFunction(initialText: string, callback: (text: string) => void)
 {
     callback(initialText);
-}
+};
 
 callingFunction("myText", myCallBack);
-
