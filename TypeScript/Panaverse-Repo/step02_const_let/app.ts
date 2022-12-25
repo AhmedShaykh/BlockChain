@@ -9,7 +9,7 @@ const c = "best";
 if (true) {
 	let z = 4;
 	console.log(z);
-}else {
+} else {
 	let z = "string";
 	console.log(z);
 }
