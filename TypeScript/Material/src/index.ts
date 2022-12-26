@@ -40,7 +40,7 @@ const course: Course = {
 console.log(metaVerse);
 console.log(course);
 
-// ========== Unions Types ========== //
+// ============= Unions Types ============= //
 
 let mathematician = Math.random() > 0.5 ? 123 : "Mark Goldberg";
 console.log(mathematician);
@@ -57,7 +57,7 @@ let leader = Math.random() > 0.5 ? "Imran Khan" : 70;
 
 console.log(leader.toString());
 
-// ========== Narrowing ========== //
+// ============= Narrowing ============= //
 
 let investor = Math.random() > 0.6 ? "Warren Buffett" : undefined;
 
@@ -82,7 +82,7 @@ typeof researcher !== "string" ?
     console.log(researcher.toFixed()) :
     console.log(researcher.toUpperCase());
 
-// ========== Literal Types ========== //
+// ============= Literal Types ============= //
 
 let literal: number | "String";
 literal = "String";
@@ -107,7 +107,7 @@ console.log(biologist);
 let program = Math.random() > 0.5 ? "Smart Contract" : undefined;
 console.log(program?.length); //Optional Use Only Undefined In Union Method
 
-// ========== Type Alias ========== //
+// ============= Type Alias ============= //
 
 type RawData = boolean | number | string;
 
@@ -132,7 +132,7 @@ console.log(typeSecond);
 console.log(typeThird = null);
 console.log(typeFourth = false);
 
-// ========== Objects ========== //
+// ============= Objects ============= //
 
 let engineer: {
     born: number;
@@ -305,3 +305,91 @@ const series = Math.random() > 0.5 ? {
 console.log(typeof series.name, series.name);
 console.log(typeof series.storyLine, series.storyLine);
 console.log(typeof series.fantasy, series.fantasy);
+
+type PoemWithPages = {
+    name: string;
+    page: number;
+    type: string;
+};
+
+type PoemWithRhymes = {
+    name: string;
+    rhymes: boolean;
+    type: string;
+};
+
+type Poems = PoemWithPages | PoemWithRhymes;
+
+const poem: Poems = Math.random() > 0.5
+    ? { name: "The Double Image", page: 7, type: 'Pages' }
+    : { name: "Her Kind", rhymes: true, type: 'Rhymes' };
+
+console.log(poem.name);
+
+if ("page" in poem) {
+    console.log(poem.page);
+}
+
+else {
+    console.log(poem.rhymes);
+}
+
+console.log(poem.type);
+
+// ============= Intersection Types ============= //
+
+type Artwork = {
+    genre: string;
+    name: string;
+};
+
+type Writing = {
+    pages: number;
+    name: string;
+};
+
+type WrittenArt = Artwork & Writing;
+
+const workArt: WrittenArt = {
+    genre: "Techno",
+    name: "AHM X",
+    pages: 44,
+};
+
+console.log(workArt);
+
+type ShortPoem = { author: string } & (
+    | { kigo: string; type: "haiku"; }
+    | { meter: number; type: "villanelle"; }
+);
+
+const morningGlory: ShortPoem = {
+    author: "Fukuda Chiyo-ni",
+    kigo: "Morning Glory",
+    type: "haiku",
+};
+
+const oneArt: ShortPoem = {
+    author: "Elizabeth Bishop",
+    type: "villanelle",
+    meter: 66,
+};
+
+console.log(morningGlory);
+console.log(oneArt);
+
+type ShortPoemBase = { author: string };
+
+type Haiku = ShortPoemBase & { name: string; type: "haiku" };
+
+type Villanelle = ShortPoemBase & { meter: number; type: "villanelle" };
+
+type ShortPoems = Haiku | Villanelle;
+
+const oneArtwork: ShortPoems = {
+    author: "Elizabeth Bishop",
+    type: "villanelle",
+    meter: 101,
+};
+
+console.log(oneArtwork);
