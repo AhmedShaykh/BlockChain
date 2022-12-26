@@ -133,3 +133,175 @@ console.log(typeThird = null);
 console.log(typeFourth = false);
 
 // ========== Objects ========== //
+
+let engineer: {
+    born: number;
+    name: string;
+};
+
+engineer = {
+    born: 1999,
+    name: "Elon Musk"
+};
+
+console.log(engineer);
+console.log(engineer.name);
+
+type Poet = {
+    year: number;
+    name: string;
+};
+
+let poetLater: Poet;
+
+poetLater = {
+    year: 2001,
+    name: "Bilal",
+};
+
+console.log(poetLater);
+
+type WithFirstName = {
+    firstName: string;
+};
+
+type WithLastName = {
+    lastName: string;
+};
+
+const hasBoth = {
+    firstName: "Martin",
+    lastName: "Garrix",
+};
+
+let withFirstName: WithFirstName = hasBoth;
+console.log(withFirstName.firstName);
+
+let withLastName: WithLastName = hasBoth;
+console.log(withLastName.lastName);
+
+type FirstAndLastNames = {
+    first: string;
+    last: string;
+};
+
+const fullName: FirstAndLastNames = {
+    first: "Sabrina",
+    last: "Carpenter",
+};
+
+console.log(fullName);
+
+const namOnlyOne: FirstAndLastNames = {
+    first: "Chor",
+    last: "Gunja"
+};
+
+console.log(`Nawaz Sharif Ki Beti ${namOnlyOne.first} Hai`);
+console.log(`Mariam Nawaz Ka Abba ${namOnlyOne.last} Aur ${namOnlyOne.first} Dono Hai`);
+
+let imported = Math.random() > 0.5 ? true : false;
+
+if (imported === true) {
+    console.log(`Jab Diesel Ata Hai To Kanpay Bhaag Jati Hai`);
+}
+else {
+    console.log(`Jab Baarish Hoti Hai To Kanpay Taang Jati Hai`);
+}
+
+type TimeRange = {
+    start: Date;
+}
+
+const myDate: TimeRange = {
+    start: new Date()
+}
+
+console.log(myDate);
+
+type Poem = {
+    author: {
+        firstName: string;
+        lastName: string;
+    };
+    name: string;
+};
+
+const poemMatch: Poem = {
+    author: {
+        firstName: "Sylvia",
+        lastName: "Plath",
+    },
+    name: "Lady Lazarus",
+};
+
+console.log(poemMatch);
+
+type Author = {
+    firstName: string;
+    lastName: string;
+};
+
+type Writer = {
+    author: Author;
+    name: string;
+};
+
+const poemMismatch: Writer = {
+    author: {
+        firstName: "Abdul Dayyan",
+        lastName: "Ali Khan"
+    },
+    name: "Tulips",
+};
+
+console.log(poemMismatch);
+
+type Book = {
+    author: string;
+    pages: number;
+    bookName?: string;
+};
+
+const book1: Book = {
+    author: "Abdul Haq",
+    pages: 80,
+    bookName: "Pakistan Zindabad"
+};
+
+const book2: Book = {
+    author: "Kaiser Mehmood",
+    pages: 75
+};
+
+console.log(book1);
+console.log(book2);
+
+type Writers = {
+    author: string | undefined;
+    nationality?: string;
+};
+
+const missingWriters: Writers = {
+    author: undefined,
+};
+
+const hasWriters: Writers = {
+    author: "William Shakespeare",
+    nationality: "British"
+};
+
+console.log(missingWriters);
+console.log(hasWriters);
+
+const series = Math.random() > 0.5 ? {
+    name: "Vikings",
+    storyLine: "Reality",
+} : {
+    name: "Stranger Things",
+    fantasy: true,
+};
+
+console.log(typeof series.name, series.name);
+console.log(typeof series.storyLine, series.storyLine);
+console.log(typeof series.fantasy, series.fantasy);
