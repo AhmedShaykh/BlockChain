@@ -24,6 +24,7 @@ console.log(boolean);
 let rocket;
 rocket = "Rocket";
 console.log(rocket.toUpperCase());
+
 rocket = 50.5;
 console.log(rocket.toFixed());
 
@@ -41,123 +42,94 @@ console.log(course);
 
 // ========== Unions Types ========== //
 
-// let mathematician = Math.random() > 0.5 ? 123 : "Mark Goldberg";
-// console.log(mathematician);
+let mathematician = Math.random() > 0.5 ? 123 : "Mark Goldberg";
+console.log(mathematician);
 
-// let thinker: string | null = null;
+let thinker: string | null = null;
 
-// if (Math.random() > 0.5) {
-//     thinker = "DataScript";
-// }
+if (Math.random() > 0.5) {
+    thinker = "DataScript";
+};
 
-// console.log(thinker);
+console.log(thinker);
 
-// let leader = Math.random() > 0.5 ? "Imran Khan" : 70;
-// leader.toString();
+let leader = Math.random() > 0.5 ? "Imran Khan" : 70;
 
-// console.log(leader);
+console.log(leader.toString());
 
 // ========== Narrowing ========== //
 
-// let investor = Math.random() > 0.6 ? "Warren Buffett" : undefined;
+let investor = Math.random() > 0.6 ? "Warren Buffett" : undefined;
 
-// if (investor) {
-//     investor.toUpperCase();
-// };
+if (investor) {
+    investor.toUpperCase();
+};
 
-// console.log(investor?.toUpperCase());
+console.log(investor?.toUpperCase());
 
-// let scientist = Math.random() > 0.5 ? "Thomas Edison" : 87.6;
+let scientist = Math.random() > 0.5 ? "Thomas Edison" : 87.6;
 
-// if (scientist === "Thomas Edison") {
-//     console.log(scientist.toUpperCase());
-// }
+if (scientist === "Thomas Edison") {
+    console.log(scientist.toUpperCase());
+}
+else if (scientist === 87.6) {
+    console.log(scientist.toFixed());
+}
 
-// else if (scientist === 87.6) {
-//     console.log(scientist.toFixed());
-// }
+let researcher = Math.random() > 0.5 ? "Rosalind Franklin" : 51.08341254;
 
-// let researcher = Math.random() > 0.5 ? "Rosalind Franklin" : 51.08341254;
-
-// typeof researcher !== "string" ?
-//     console.log(researcher.toFixed()) :
-//     console.log(researcher.toUpperCase());
+typeof researcher !== "string" ?
+    console.log(researcher.toFixed()) :
+    console.log(researcher.toUpperCase());
 
 // ========== Literal Types ========== //
 
-// let literal: number | "String";
-// literal = "String";
-// console.log(literal);
+let literal: number | "String";
+literal = "String";
+console.log(literal);
 
-// literal = 44;
-// console.log(literal);
+literal = 44;
+console.log(literal);
 
-// let science: "Computer" | "Chemistry";
-// science = Math.random() > 0.5 ? "Computer" : "Chemistry";
+let science: "Computer" | "Chemistry";
+science = Math.random() > 0.5 ? "Computer" : "Chemistry";
 
-// if (science == "Computer") {
-//     console.log(science.toUpperCase());
-// }
-// else {
-//     console.log(science.toLowerCase());
-// }
+if (science == "Computer") {
+    console.log(science.toUpperCase());
+}
+else {
+    console.log(science.toLowerCase());
+}
 
-// let biologist = Math.random() > 0.5 && "Rachel Carson"; // String | False
-// console.log(biologist);
+let biologist = Math.random() > 0.5 && "Rachel Carson"; // String | False
+console.log(biologist);
 
-// let program = Math.random() > 0.5 ? "Smart Contract" : undefined;
-// console.log(program?.length); //Optional Use Only Undefined In Union Method
+let program = Math.random() > 0.5 ? "Smart Contract" : undefined;
+console.log(program?.length); //Optional Use Only Undefined In Union Method
 
 // ========== Type Alias ========== //
 
-// type RawData = boolean | number | string;
+type RawData = boolean | number | string;
 
-// let rawDataFirst: RawData;
-// let rawDataSecond: RawData;
-// let rawDataThird: RawData;
+let rawDataFirst: RawData;
+let rawDataSecond: RawData;
+let rawDataThird: RawData;
 
-// console.log(rawDataFirst = true);
-// console.log(rawDataSecond = "AHMED");
-// console.log(rawDataThird = 4000);
+console.log(rawDataFirst = true);
+console.log(rawDataSecond = "AHMED");
+console.log(rawDataThird = 4000);
 
-// type Id = boolean | string;
-// type IdMaybe = Id | undefined | null;
+type Id = boolean | string;
+type IdMaybe = Id | undefined | null;
 
-// let typeFirst: Id;
-// let typeSecond: IdMaybe;
-// let typeThird: IdMaybe;
-// let typeFourth: IdMaybe;
+let typeFirst: Id;
+let typeSecond: IdMaybe;
+let typeThird: IdMaybe;
+let typeFourth: IdMaybe;
 
-// console.log(typeFirst = 'Ahmed');
-// console.log(typeSecond);
-// console.log(typeThird = null);
-// console.log(typeFourth = false);
+console.log(typeFirst = 'Ahmed');
+console.log(typeSecond);
+console.log(typeThird = null);
+console.log(typeFourth = false);
 
 // ========== Objects ========== //
-
-// let engineer: {
-//     born: number;
-//     name: string;
-// };
-
-// engineer = {
-//     born: 1999,
-//     name: "Elon Musk"
-// };
-
-// console.log(engineer);
-// console.log(engineer.name);
-
-// type Poet = {
-//     year: number;
-//     name: string;
-// };
-
-// let poetLater: Poet;
-
-// poetLater = {
-//     year: 2001,
-//     name: "Dayyan",
-// };
-
-// console.log(poetLater);
