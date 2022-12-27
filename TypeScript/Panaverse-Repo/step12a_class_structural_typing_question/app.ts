@@ -10,9 +10,6 @@ class Human {
     }
 }
 
-const d = new Human("Ahmed");
-console.log(d.name);
-
 class Animal {
     name: string;
     
@@ -50,7 +47,6 @@ let h: Human = new Human("Tom");
 let a: Animal = new Animal("Goat");
 let r: Robot = new Robot("R2-D2");
 
-
 /* TypeScript is a structural type system which is different from 
 Java, C#, etc. When we compare two different types, 
 regardless of where they came from, if the types of each member 
@@ -65,18 +61,13 @@ r = a;//Animal has a name, Robot also has a name
 
 //a = r2;//Error, Robot does not have eat method
 
-
-
 let hum : Human = new Animal("Dog");//Fresh Object
 // But Fresh or stale both have same properties and methods
 // therefore compatible
 
-
 //let wild : Animal = new WildAnimal("Deer");//Fresh Object
 // But Fresh or stale both have different property names
 // therefore not compatible
-
-
 
 let r0: Robot = new Animal("Donkey");//how is this possible?
 //another issue is that Donkey is a fresh object
