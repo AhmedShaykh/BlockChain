@@ -1,79 +1,111 @@
-class Car {
-    name: string;
+// ============= Abstraction ============= //
 
-    constructor(name: string) {
+abstract class Character {
+    public name: string;
+    public damage: number;
+    public attackSpeed: number;
+
+    constructor(name: string, damage: number, speed: number) {
         this.name = name;
+        this.damage = damage;
+        this.attackSpeed = speed;
     }
-};
 
-const myCar = new Car("Bugatti");
-console.log(`${myCar.name} is My Dream Car`);
+    public abstract damagePerSecond(): number;
+}
+
+class Goblin extends Character {
+    constructor(name: string, damage: number, speed: number) {
+        super(name, damage, speed);
+    }
+
+    public damagePerSecond(): number {
+        return this.damage * this.attackSpeed;
+    }
+}
+
+// ============= Encapsulation ============= //
 
 class Person {
-    static id: number = 0;
+    private _name: string;
 
-    personId: number;
+    constructor(name: string) {
+        this._name = name;
+    }
 
-    constructor() {
-        this.personId = ++Person.id;
+    public get name(): string {
+        return this._name;
+    }
+
+    public set name(value: string) {
+        this._name = value;
     }
 }
 
-const per = new Person();
-console.log(per.personId);
+// ============= Inheritance ============= //
 
-const per2 = new Person();
-console.log(per2.personId);
+class User {
+    public name: string;
+    public damage: number;
 
-console.log(Person.id);
+    constructor(name: string, damage: number) {
+        this.name = name;
+        this.damage = damage;
+    }
 
-class ClassPerson {
-    name?: string;
+    public talk(): void {
+        console.log('Says something ...');
+    }
 }
 
-class StudentClass extends ClassPerson {
-    course?: string;
-    rollNumber?: string;
+class Orc extends User {
+    public weapon: string;
+
+    constructor(name: string, damage: number, weapon: string) {
+        super(name, damage);
+
+        this.weapon = weapon;
+    }
+
+    public attack(): void {
+        console.log(`Attacks his target with his ${this.weapon}.`);
+    }
 }
 
-class Teacher extends ClassPerson {
-    course?: string;
-    timing?: string;
+// ============= Polymorphism ============= //
+
+class Username {
+    public name: string;
+    public damage: number;
+
+    constructor(name: string, damage: number) {
+        this.name = name;
+        this.damage = damage;
+    }
+
+    public talk(): void {
+        console.log('Says something ...');
+    }
+
+    public attack(): void {
+        console.log(`Attacks his target with his fists.`);
+    }
 }
 
-class Course {
-    classTeacher?: Teacher;
-    students?: StudentClass[];
-    timing?: string;
+class id extends Username {
+    public weapon: string;
+
+    constructor(name: string, damage: number, weapon: string) {
+        super(name, damage);
+
+        this.weapon = weapon;
+    }
+
+    public talk(): void {
+        console.log('Says something but in orcish ...');
+    }
+
+    public attack(): void {
+        console.log(`Attacks his target with his ${this.weapon}.`);
+    }
 }
-
-const student1:StudentClass = new StudentClass();
-student1.name="Student1";
-student1.rollNumber = "1";
-
-const student2:StudentClass = new StudentClass();
-student2.name="Student2";
-student2.rollNumber = "2";
-
-const student3:StudentClass = new StudentClass();
-student3.name="Student3";
-student3.rollNumber = "3";
-
-const teacher: Teacher = new Teacher();
-teacher.name = "Teacher 1";
-teacher.course = "PIAIC";
-teacher.timing = "6-10";
-
-const course:Course = new Course();
-course.classTeacher = teacher;
-course.timing=teacher.timing;
-student1.course = teacher.course;
-student2.course = teacher.course;
-student3.course = teacher.course;
-
-const stdArray: StudentClass[] = [student1, student2, student3];
-course.students = stdArray;
-console.log(course);
-
-teacher.timing =  "10-11";
-console.log(course);
