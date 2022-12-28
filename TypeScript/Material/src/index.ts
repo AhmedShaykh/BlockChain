@@ -393,3 +393,96 @@ const oneArtwork: ShortPoems = {
 };
 
 console.log(oneArtwork);
+
+// ============= Any Types ============= //
+
+let myval: any;
+
+myval = true;
+console.log(myval);
+
+myval = 42;
+console.log(myval);
+
+myval = "Hey!";
+console.log(myval);
+
+myval = [];
+console.log(myval);
+
+myval = {};
+console.log(myval);
+
+myval = Math.random();
+console.log(myval);
+
+myval = null;
+console.log(myval);
+
+myval = undefined;
+console.log(myval);
+
+myval = () => { console.log('Hey again!') };
+console.log(myval);
+
+// ============= Unknown Types ============= //
+
+let value: unknown;
+
+value = true;
+console.log(value);
+
+value = 42;
+console.log(value);
+
+value = "Hey!";
+console.log(value);
+
+value = [];
+console.log(value);
+
+value = {};
+console.log(value);
+
+value = Math.random();
+console.log(value);
+
+value = null;
+console.log(value);
+
+value = undefined;
+console.log(value);
+
+value = () => { console.log('Hey again!') };
+console.log(value);
+
+let val: unknown;
+
+let val1: unknown = val = true;
+console.log(val1);
+
+let val2: any = val = null;
+console.log(val2)
+
+// Unknown Variable To Allow Unknown & Any Types Assign But Other Types To Not Allow
+
+let valx: any;
+
+let val3: unknown = valx = 404;
+console.log(val3);
+
+let val4: string = valx = "String";
+console.log(val4)
+
+// ============= Explict Casting ============= //
+
+let myNam: unknown = "Ahmed";
+console.log((myNam as string).length);
+
+console.log((<string>myNam).length);
+
+let myNum: unknown = 65.90;
+console.log((myNum as number).toFixed());
+
+let myBool: unknown = true;
+console.log((<boolean>myBool).toString());
