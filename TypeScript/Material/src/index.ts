@@ -486,3 +486,34 @@ console.log((myNum as number).toFixed());
 
 let myBool: unknown = true;
 console.log((<boolean>myBool).toString());
+
+// ============= Enum ============= //
+
+enum Colors { Red, Green, Blue };
+
+let c: Colors = Colors.Green;
+console.log(c);
+
+enum Color1 { Red = 1, Green, Blue };
+
+let colorName: string = Color1[2];
+console.log(colorName);
+
+enum Color2 { Red = 1, Blue, Green = 2 };
+
+let colorIndex = Color2["Blue"];
+console.log(colorIndex);
+
+// ============= Const Enum ============= //
+
+const enum ColorEnum { Red, Green, Blue };
+
+let d: ColorEnum = ColorEnum.Green;
+console.log(d);
+
+const enum ColorsName { Red = 3, Blue, Green = 1 };
+
+let colorInd = ColorsName["Blue"];
+console.log(colorInd);
+
+// Enum Const Not Allowed Enum Return Name Only Index
