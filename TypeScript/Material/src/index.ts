@@ -481,8 +481,10 @@ console.log((myNam as string).length);
 
 console.log((<string>myNam).length);
 
-let myNum: unknown = 65.90;
-console.log((myNum as number).toFixed());
+let myNum: string = "65.90";
+console.log((myNum as unknown as number));
+
+console.log(Number(myNum).toFixed());
 
 let myBool: unknown = true;
 console.log((<boolean>myBool).toString());
