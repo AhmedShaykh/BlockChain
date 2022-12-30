@@ -481,13 +481,13 @@ console.log((myNam as string).length);
 
 console.log((<string>myNam).length);
 
-let myNum: string = "65.90";
-console.log((myNum as unknown as number));
-
-console.log(Number(myNum).toFixed());
-
 let myBool: unknown = true;
 console.log((<boolean>myBool).toString());
+
+let myNum: string = "65.90";
+console.log((myNum as unknown as number).toFixed);
+
+console.log(Number(myNum).toFixed());
 
 // ============= Enum ============= //
 
@@ -519,3 +519,76 @@ let colorInd = ColorsName["Blue"];
 console.log(colorInd);
 
 // Enum Const Not Allowed Enum Return Name Only Index
+
+// ============= Arrays ============= //
+
+let arrayOfNumbers: number[];
+arrayOfNumbers = [4, 8, 15, 16, 23, 42];
+
+console.log(arrayOfNumbers);
+
+let newArray = ["array", "array2", 123, 456, true];
+
+newArray.pop();
+newArray.push(789, false);
+console.log(newArray);
+
+let createStrings: () => string[];
+
+createStrings = () => ["Ahmed", "Saqlain", "Majid"];
+
+console.log(createStrings());
+
+let arrayTS: (string | number)[];
+
+arrayTS = ["Data", "Type", 345, 864];
+
+console.log(arrayTS);
+
+let arrayVar: string | number[];
+
+arrayVar = [1, 2, 3, 4], "Pakistan";
+
+console.log(arrayVar);
+
+arrayVar = "China", [1, 2, 3, 4];
+
+console.log(arrayVar);
+
+// ============= 2 Dimensional Array ============= //
+
+let arrayDim: (string | number)[][];
+
+arrayDim = [
+    ["Mon", "Tue", "Wed"],
+    [4, 6, 10]
+];
+
+for (let Days in arrayDim) {
+    console.log(arrayDim[Days]);
+};
+
+let Coins: string[] = ["BTC", "ETH", "BNB"];
+
+for (let data in Coins) {
+    console.log(Coins[data]);
+};
+
+const soldiers = ["Ertugrul Ghazi", "Mehmood Ghaznavi", "Sultan Salahuddin Ayubi"];
+
+const soldierAges = [60, 51, 75];
+
+const conjoined = [...soldiers, ...soldierAges];
+console.log(conjoined);
+
+function logWarriors(greeting: string, ...names: string[]) {
+    for (const name of names) {
+        console.log(`${name} is ${greeting}`);
+    }
+};
+
+const warriors = ["Khalid Ibn Al-Walid", "Tariq Ibn-Ziyad", "Muhammad Ibn-Qasim"];
+
+logWarriors("Muslims Warriors", ...warriors);
+
+// ============= Tuples ============= //
