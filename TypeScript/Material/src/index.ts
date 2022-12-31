@@ -594,10 +594,10 @@ logWarriors("Muslims Warriors", ...warriors);
 // ============= Functions ============= //
 
 function sing(song: string) {
-    console.log(`Singing: ${song}!`);
+    console.log(`Song: ${song}!`);
 }
 
-sing("Ole Ole");
+sing("Happy");
 
 function announceSong(song: string, singer?: string) {
 
@@ -608,20 +608,55 @@ function announceSong(song: string, singer?: string) {
         console.log(`Song: ${song}`);
     }
 
-}
+};
 
 announceSong("Dreamer");
 announceSong("On My Way", "Sabrina Carpenter");
 
-function announceSongBy(song: string, singer?: string | undefined) {
-    console.log(`Song: ${song}`);
 
-    if (singer) {
+function announceSongBy(song: string, singer: string | undefined) {
+
+    if (singer === "string") {
         console.log(`Song: ${song}, Singer: ${singer}`);
     }
     else {
-        console.log(singer);
+        console.log(`Song: ${song}, Singer: ${singer}`);
     }
+
 };
 
-announceSongBy("Greensleeves", undefined);
+announceSongBy("Once Again", undefined);
+
+function edm(song: string, rating = 0) {
+    console.log(`${song} Gets Rating ${rating}/10`);
+};
+
+edm("Hardwell - Mad World", 9);
+edm("Bella Ciao");
+edm("Will Sparks - Dreaming", 10);
+
+function song(singer: string, ...songs: string[]) {
+
+    for (const var1 of songs) {
+        console.log(`${var1} Feat. ${singer}`)
+    }
+
+};
+
+song("Akcent", "Thats My Name", "Stay With Me", "King Of Disco");
+
+function technoTrance(techno: string[]) {
+
+    for (let trance of techno) {
+        console.log(`${trance}`);
+    };
+
+};
+
+technoTrance(["Will Sparks - L.S.D", "MADDIX - Formula"]);
+
+function getSongAt(songs: string, index: number) {
+    return index < songs.length ? songs[index] : undefined;
+};
+
+console.log(getSongAt("Revealed", 4));
