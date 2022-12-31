@@ -660,3 +660,146 @@ function getSongAt(songs: string, index: number) {
 };
 
 console.log(getSongAt("Revealed", 4));
+
+function createDate(timeStamp: number): Date;
+function createDate(day: number, month?: number, year?: number): Date;
+
+function createDate(dayOrTimeStamp: number, month?: number, year?: number) {
+
+    return typeof month === "undefined" || typeof year === "undefined"
+        ? new Date(dayOrTimeStamp)
+        : new Date(dayOrTimeStamp, month, year);
+
+};
+
+console.log(createDate(1).toLocaleString());
+console.log(createDate(1, 1, 1970).toLocaleString());
+
+function getSongRecordingDate(song: string): Date | undefined | string {
+    switch (song) {
+        case "Summertime Sadness":
+            return new Date();
+        case "Lockdown":
+            return "14 August, 2018";
+        default:
+            return undefined;
+    }
+};
+
+console.log(getSongRecordingDate("Lockdown"));
+console.log(getSongRecordingDate("Summertime Sadness"));
+
+function fun1(callback: Function) {
+    setTimeout(() => {
+        callback();
+    }, 2000);
+    console.log("Please Wait...");
+};
+
+function fun2() {
+    console.log("Working Done!")
+};
+
+fun1(fun2);
+
+let phonk: (genre: string) => string;
+
+phonk = function (genre) {
+    return `InterWood: ${genre.toUpperCase()}!`;
+};
+
+console.log(phonk("Metamorphosis"));
+
+let data1 = ['text2', 'text3', 'text4'];
+
+data1.forEach((data, index) => {
+    console.log(data, index);
+});
+
+type StringToNumber = (input: string) => number;
+
+let stringToNumber: StringToNumber;
+
+stringToNumber = (input) => input.length;
+
+console.log(stringToNumber("Four"));
+
+type NumberToString = (input: number) => string;
+
+function usesNumberToString(NumberToString: NumberToString) {
+    console.log(`The String is: ${NumberToString(1234)}`);
+};
+
+usesNumberToString((input) => `${input}! Hooray!`);
+
+type dataS = (abc: number) => number;
+
+function funName(data2: dataS): void {
+    console.log(data2(404));
+};
+
+funName((abc) => abc);
+
+let songLogger: (song: string) => void;
+
+songLogger = (song) => {
+    console.log(`${song}`);
+};
+
+songLogger("Feel It");
+
+// ========== Overloads ========== //
+
+function overload(a: String, b: String): String;
+function overload(a: number, b: number): number;
+function overload(a: string, b: number): string;
+function overload(a: boolean, b: boolean): boolean;
+function overload(a: any, b: any): any {
+    return a + b;
+};
+
+console.log(overload("Hello ", "World"));
+console.log(overload(112, 88));
+console.log(overload("Ahmed: ", 1));
+console.log(overload(true, false));
+
+// ============= Tuples ============= //
+
+let tuple: [number, string] = [4, "SOLANA"];
+console.log(tuple);
+
+let tupleValue: [number, number] = [4, 6];
+console.log(tupleValue);
+
+let [year, warrior] = Math.random() > 0.5
+    ? [340, "Archidamia"]
+    : [1828, "Rani of Jhansi"];
+
+console.log(warrior);
+console.log(year);
+
+const tupleThree: [boolean, number, string] = [false, 1583, "Ninga"];
+const tupleTwoExact: [boolean, number] = [tupleThree[0], tupleThree[1]];
+
+console.log(tupleTwoExact);
+
+const ourTuple: [number, boolean, string] = [5, false, 'Coding God Was Here'];
+
+ourTuple.push('Something New & Wrong');
+console.log(ourTuple);
+
+function logPair(name: string, value: number) {
+    console.log(`${name} has ${value}`);
+}
+
+const pairTupleCorrect: [string, number] = ["Amenda", 1];
+logPair(...pairTupleCorrect);
+
+let normalTuple = [444, "Hardwell"];
+
+console.log(normalTuple);
+console.log(normalTuple[0]);
+
+let readonlyTuple = [111, "Trevor"] as const; // readonly
+
+console.log(readonlyTuple);
