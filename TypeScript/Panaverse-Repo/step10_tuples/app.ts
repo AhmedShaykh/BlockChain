@@ -73,7 +73,8 @@ console.log(monthThreePayments);
 // You can use tuples to describe functions which take
 // an undefined number of parameters with types:
 
-declare function calculatePayForEmployee(id: number, ...args: [...number[]]): number;
+let readonlyTuple = [111, "Trevor"] as const; // readonly
 
-calculatePayForEmployee(staff[0][0], payStubs[0][1]);
-calculatePayForEmployee(staff[1][0], payStubs[1][1], payStubs[1][2]);
+console.log(readonlyTuple);
+
+readonlyTuple[0] = 444;
