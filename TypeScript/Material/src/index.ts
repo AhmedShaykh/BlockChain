@@ -485,7 +485,7 @@ let myBool: unknown = true;
 console.log((<boolean>myBool).toString());
 
 let myNum: string = "65.90";
-console.log((myNum as unknown as number).toFixed);
+console.log((myNum as unknown as number).toFixed); // Wrong
 
 console.log(Number(myNum).toFixed());
 
@@ -591,4 +591,37 @@ const warriors = ["Khalid Ibn Al-Walid", "Tariq Ibn-Ziyad", "Muhammad Ibn-Qasim"
 
 logWarriors("Muslims Warriors", ...warriors);
 
-// ============= Tuples ============= //
+// ============= Functions ============= //
+
+function sing(song: string) {
+    console.log(`Singing: ${song}!`);
+}
+
+sing("Ole Ole");
+
+function announceSong(song: string, singer?: string) {
+
+    if (singer) {
+        console.log(`Song: ${song}, Singer: ${singer}`);
+    }
+    else {
+        console.log(`Song: ${song}`);
+    }
+
+}
+
+announceSong("Dreamer");
+announceSong("On My Way", "Sabrina Carpenter");
+
+function announceSongBy(song: string, singer?: string | undefined) {
+    console.log(`Song: ${song}`);
+
+    if (singer) {
+        console.log(`Song: ${song}, Singer: ${singer}`);
+    }
+    else {
+        console.log(singer);
+    }
+};
+
+announceSongBy("Greensleeves", undefined);
