@@ -1,13 +1,13 @@
+"use strict";
 //strongly typed syntax
-let a: string = "Pakistan"; // Explicit
+let a = "Pakistan"; // Explicit
 console.log(a);
 a = "USA";
 console.log(a);
-let b: number = 9;
+let b = 9;
 console.log(b);
-let c: boolean = true;
+let c = true;
 console.log(c);
-
 //type inference
 let e = "China"; // Implicit
 e = "Russia";
