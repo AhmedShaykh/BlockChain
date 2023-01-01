@@ -2,6 +2,8 @@
 //Tuple types have the advantage that you can accurately describe the type of an array of mixed types
 let tuple = [1, "bob"];
 console.log(tuple);
+tuple[0] = 2;
+console.log(tuple);
 let secondElement = tuple[1]; // secondElement now has type 'string'
 console.log(secondElement);
 // Typically an array contains zero to many objects of a

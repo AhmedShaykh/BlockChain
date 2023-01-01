@@ -340,11 +340,11 @@ console.log(poem.type);
 
 type Artwork = {
     genre: string;
-    name: string;
+    design: string;
 };
 
 type Writing = {
-    pages: number;
+    tracks: number;
     name: string;
 };
 
@@ -353,7 +353,8 @@ type WrittenArt = Artwork & Writing;
 const workArt: WrittenArt = {
     genre: "Techno",
     name: "AHM X",
-    pages: 44,
+    tracks: 44,
+    design: "Revealed"
 };
 
 console.log(workArt);
@@ -485,7 +486,7 @@ let myBool: unknown = true;
 console.log((<boolean>myBool).toString());
 
 let myNum: string = "65.90";
-console.log((myNum as unknown as number).toFixed); // Wrong
+console.log((myNum as unknown as number).toFixed); // Undefined
 
 console.log(Number(myNum).toFixed());
 
@@ -504,7 +505,10 @@ console.log(colorName);
 enum Color2 { Red = 1, Blue, Green = 2 };
 
 let colorIndex = Color2["Blue"];
+let colorIndex2 = Color2["Green"];
+
 console.log(colorIndex);
+console.log(colorIndex2);
 
 // ============= Const Enum ============= //
 
@@ -593,7 +597,7 @@ logWarriors("Muslims Warriors", ...warriors);
 
 // ============= Functions ============= //
 
-function sing(song: string) {
+function sing(song: string): void {
     console.log(`Song: ${song}!`);
 }
 
@@ -613,8 +617,7 @@ function announceSong(song: string, singer?: string) {
 announceSong("Dreamer");
 announceSong("On My Way", "Sabrina Carpenter");
 
-
-function announceSongBy(song: string, singer: string | undefined) {
+function announceSongBy(song: string, singer: string | undefined): void {
 
     if (singer === "string") {
         console.log(`Song: ${song}, Singer: ${singer}`);
@@ -664,7 +667,7 @@ console.log(getSongAt("Revealed", 4));
 function createDate(timeStamp: number): Date;
 function createDate(day: number, month?: number, year?: number): Date;
 
-function createDate(dayOrTimeStamp: number, month?: number, year?: number) {
+function createDate(dayOrTimeStamp: number, month?: number, year?: number): Date {
 
     return typeof month === "undefined" || typeof year === "undefined"
         ? new Date(dayOrTimeStamp)
@@ -768,8 +771,13 @@ console.log(overload(true, false));
 let tuple: [number, string] = [4, "SOLANA"];
 console.log(tuple);
 
+tuple[0] = 5;
+console.log(tuple);
+
 let tupleValue: [number, number] = [4, 6];
+
 console.log(tupleValue);
+console.log(tupleValue[1]);
 
 let [year, warrior] = Math.random() > 0.5
     ? [340, "Archidamia"]
@@ -794,11 +802,6 @@ function logPair(name: string, value: number) {
 
 const pairTupleCorrect: [string, number] = ["Amenda", 1];
 logPair(...pairTupleCorrect);
-
-let normalTuple = [444, "Hardwell"];
-
-console.log(normalTuple);
-console.log(normalTuple[0]);
 
 let readonlyTuple = [111, "Trevor"] as const; // readonly
 

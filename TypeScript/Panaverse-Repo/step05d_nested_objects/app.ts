@@ -8,7 +8,7 @@ type Book = {
     name: string;
 };
 
-const myBook : Book = {
+const myBook: Book = {
     author: {
         firstName: "Ahmed",
         lastName: "Shaykh"

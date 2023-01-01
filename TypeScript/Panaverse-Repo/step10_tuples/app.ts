@@ -3,6 +3,10 @@
 let tuple: [number, string] = [1, "bob"];
 console.log(tuple);
 
+tuple[0] = 2;
+
+console.log(tuple);
+
 let secondElement = tuple[1];  // secondElement now has type 'string'
 console.log(secondElement);
 

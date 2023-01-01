@@ -37,3 +37,14 @@ var colorIndex2 = Color3["Blue"];
 var colorIndex3 = Color3["Red"];
 console.log(colorIndex2);
 console.log(colorIndex3);
+var Color4;
+(function (Color4) {
+    Color4[Color4["Red"] = 0] = "Red";
+    Color4[Color4["Green"] = 1] = "Green";
+    Color4[Color4["Blue"] = 1] = "Blue";
+})(Color4 || (Color4 = {}));
+;
+var colorIndex4 = Color4["Blue"];
+var colorIndex5 = Color4["Green"];
+console.log(colorIndex4);
+console.log(colorIndex5);

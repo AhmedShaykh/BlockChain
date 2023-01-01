@@ -1,9 +1,11 @@
 // Anonymous
 
-let teacher : {name: string, exp: number} = {
+let teacher: { name: string, exp: number } = {
     name: "Zeeshan",
     exp: 10
 }
+
+console.log(teacher);
 
 // Aliased Object Type
 
