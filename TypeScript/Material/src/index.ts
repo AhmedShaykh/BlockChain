@@ -806,3 +806,255 @@ logPair(...pairTupleCorrect);
 let readonlyTuple = [111, "Trevor"] as const; // readonly
 
 console.log(readonlyTuple);
+
+// ============= Interface ============= //
+
+interface Crypto {
+    supply: number;
+    name: string;
+};
+
+let cryptoCoin: Crypto;
+
+cryptoCoin = {
+    supply: 10000,
+    name: "AHMX Coin",
+};
+
+console.log(cryptoCoin);
+
+interface Ethereum {
+    founder: string;
+    price: number;
+    nationality?: string;
+};
+
+let ether: Ethereum = {
+    founder: "Vitalik Buterin",
+    price: 1050,
+    nationality: "Russian Canadian",
+};
+
+console.log(ether);
+
+interface Topic {
+    readonly text: string;
+    pageNumbers?: number;
+};
+
+let topic: Topic = {
+    text: "TypeScript", // Assign Value Only One Time!
+    pageNumbers: 343,
+};
+
+console.log(topic);
+console.log(topic.text);
+console.log(topic.pageNumbers = 450);
+
+interface HasBothFunctionTypes {
+    property: () => string;
+    method(): string;
+};
+
+const hasFunction: HasBothFunctionTypes = {
+    property: () => "Edge Computing!",
+    method() {
+        return "Serverless";
+    }
+};
+
+console.log(hasFunction.method());
+console.log(hasFunction.property());
+
+interface CallSignature {
+    (input: string): number;
+};
+
+const typedFunctionAlias: CallSignature = (input) => input.length;
+
+console.log(typedFunctionAlias("Interface"));
+
+interface DatesByName {
+    [i: string]: Date;
+};
+
+const publishDates: DatesByName = {
+    Frankenstein: new Date("1 January 2030"),
+};
+
+publishDates.Frankenstein;
+console.log(publishDates.Frankenstein.toString());
+
+interface ChapterStarts {
+    preface: 0; // Value Fix 0
+    [i: string]: number;
+};
+
+const correctPreface: ChapterStarts = {
+    preface: 0, // Interface Assign Value Than Not Change!
+    night: 1,
+    shopping: 5
+};
+
+console.log(correctPreface.preface);
+
+const wrongPreface: ChapterStarts = {
+    preface: 0,
+};
+
+console.log(wrongPreface);
+
+interface MoreNarrowNumbers {
+    [i: number]: string;
+    [i: string]: string | undefined;
+};
+
+const mixesNumbersAndStrings: MoreNarrowNumbers = {
+    0: 'One',
+    1.5: '1.5',
+    key1: 'Two',
+    key2: undefined,
+};
+
+console.log(mixesNumbersAndStrings);
+
+interface Novel {
+    author: {
+        name: string;
+    };
+    setting: Setting;
+};
+
+interface Setting {
+    place: string;
+    year: number;
+};
+
+let myNovel: Novel;
+
+myNovel = {
+    author: {
+        name: 'Jane Austen',
+    },
+    setting: {
+        place: 'England',
+        year: 1812,
+    }
+};
+
+console.log(myNovel.setting);
+
+interface Writinng {
+    title: string;
+};
+
+interface Reading extends Writinng {
+    pages: number;
+};
+
+let myReading: Reading = {
+    pages: 195,
+    title: "Ethan Frome",
+};
+
+console.log(myReading);
+
+interface Merged {
+    fromFirst: string;
+};
+
+interface Merged {
+    fromSecond: number;
+};
+
+let merged: Merged = {
+    fromFirst: "BTC",
+    fromSecond: 44
+};
+
+console.log(merged);
+
+// ========== Generics ========== //
+
+function identity<T>(input: T) {
+    return input;
+};
+
+const numeric = identity<number>(666);
+console.log(numeric);
+
+const stringy = identity<string>("Generic");
+console.log(stringy);
+
+function gen<T>(a: T, b: T): T[] {
+    return [a, b]
+};
+
+console.log(gen<number>(2, 2));
+console.log(gen<string>("2", "2"));
+console.log(gen<Array<number>>([2], [4]));
+
+function addUser<T>(user: T) {
+    return user;
+};
+
+console.log(addUser<string>("AHM X ETH"));
+
+const generic = <T>(input: T) => input;
+console.log(generic<number>(1234));
+
+function makeTuple<First, Second>(first: First, second: Second) {
+    return [first, second] as const;
+};
+
+let tupleGeneric = makeTuple<boolean, string>(true, "abc");
+console.log(tupleGeneric);
+
+interface Box<T> {
+    inside: T;
+};
+
+let stringyBox: Box<string> = {
+    inside: "abc",
+};
+
+console.log(stringyBox);
+
+class Secret<Key, Value> {
+    key: Key;
+    value: Value;
+
+    constructor(key: Key, value: Value) {
+        this.key = key;
+        this.value = value;
+    };
+
+    getValue(key: Key): Value | boolean {
+        return this.key === key
+            ? this.value
+            : false;
+    }
+};
+
+const storage = new Secret<number, string>(12345, "London");
+console.log(storage);
+console.log(storage.getValue(1234));
+console.log(storage.getValue(12345));
+
+type Nullish<T> = null | number;
+
+let dataGet: Nullish<number> = 786;
+console.log(dataGet);
+
+interface WithLength {
+    length: number;
+};
+
+function logWithLength<T extends WithLength>(input: T): T {
+    console.log(`Length: ${input.length}`);
+    return input;
+};
+
+console.log(logWithLength("No one can figure out your worth but you."));
+console.log(logWithLength([false, true]));
+console.log(logWithLength({ length: 1234 }));
