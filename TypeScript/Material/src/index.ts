@@ -74,7 +74,7 @@ if (scientist === "Thomas Edison") {
 }
 else if (scientist === 87.6) {
     console.log(scientist.toFixed());
-}
+};
 
 let researcher = Math.random() > 0.5 ? "Rosalind Franklin" : 51.08341254;
 
@@ -99,7 +99,7 @@ if (science == "Computer") {
 }
 else {
     console.log(science.toLowerCase());
-}
+};
 
 let biologist = Math.random() > 0.5 && "Rachel Carson"; // String | False
 console.log(biologist);
@@ -475,7 +475,7 @@ console.log(val3);
 let val4: string = valx = "String";
 console.log(val4)
 
-// ============= Explict Casting ============= //
+// ============= Explict Or Type Casting ============= //
 
 let myNam: unknown = "Ahmed";
 console.log((myNam as string).length);
@@ -630,7 +630,7 @@ function announceSongBy(song: string, singer: string | undefined): void {
 
 announceSongBy("Once Again", undefined);
 
-function edm(song: string, rating = 0) {
+function edm(song: string, rating = 5) {
     console.log(`${song} Gets Rating ${rating}/10`);
 };
 
@@ -733,7 +733,7 @@ function usesNumberToString(NumberToString: NumberToString) {
     console.log(`The String is: ${NumberToString(1234)}`);
 };
 
-usesNumberToString((input) => `${input}! Hooray!`);
+usesNumberToString(input => `${input}! Hooray!`);
 
 type dataS = (abc: number) => number;
 
@@ -800,17 +800,17 @@ function logPair(name: string, value: number) {
     console.log(`${name} has ${value}`);
 }
 
-const pairTupleCorrect: [string, number] = ["Amenda", 1];
+const pairTupleCorrect: [string, number] = ["Amenda", 1]; // Order Number Not Change
 logPair(...pairTupleCorrect);
 
-let readonlyTuple = [111, "Trevor"] as const; // readonly
+let readonlyTuple = [111, "Trevor"] as const; // Readonly Not Change Value
 
 console.log(readonlyTuple);
 
 // ============= Interface ============= //
 
 interface Crypto {
-    supply: number;
+    supply: number; // // Interface Use Structure Of Object
     name: string;
 };
 
@@ -843,7 +843,7 @@ interface Topic {
 };
 
 let topic: Topic = {
-    text: "TypeScript", // Assign Value Only One Time!
+    text: "TypeScript", // Assign Value Only One Time Can't Change It!
     pageNumbers: 343,
 };
 
@@ -886,7 +886,7 @@ publishDates.Frankenstein;
 console.log(publishDates.Frankenstein.toString());
 
 interface ChapterStarts {
-    preface: 0; // Value Fix 0
+    readonly preface: 0; // Value Fix Interface Only Number Assign
     [i: string]: number;
 };
 
@@ -959,7 +959,7 @@ let myReading: Reading = {
 
 console.log(myReading);
 
-interface Merged {
+interface Merged { // Same Name Multi Interface's Allow
     fromFirst: string;
 };
 
@@ -969,7 +969,7 @@ interface Merged {
 
 let merged: Merged = {
     fromFirst: "BTC",
-    fromSecond: 44
+    fromSecond: 1
 };
 
 console.log(merged);
@@ -1041,7 +1041,7 @@ console.log(storage);
 console.log(storage.getValue(1234));
 console.log(storage.getValue(12345));
 
-type Nullish<T> = null | number;
+type Nullish<T> = null | T;
 
 let dataGet: Nullish<number> = 786;
 console.log(dataGet);
