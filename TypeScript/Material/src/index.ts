@@ -664,20 +664,6 @@ function getSongAt(songs: string, index: number) {
 
 console.log(getSongAt("Revealed", 4));
 
-function createDate(timeStamp: number): Date;
-function createDate(day: number, month?: number, year?: number): Date;
-
-function createDate(dayOrTimeStamp: number, month?: number, year?: number): Date {
-
-    return typeof month === "undefined" || typeof year === "undefined"
-        ? new Date(dayOrTimeStamp)
-        : new Date(dayOrTimeStamp, month, year);
-
-};
-
-console.log(createDate(1).toLocaleString());
-console.log(createDate(1, 1, 1970).toLocaleString());
-
 function getSongRecordingDate(song: string): Date | undefined | string {
     switch (song) {
         case "Summertime Sadness":
