@@ -5,7 +5,7 @@ while (i < 10) {
     i++;
 };
 
-let session = ["Ahmed", "Usman", "Faiz", "Abdul Rehman", "Saad"];
+let session = ["Ahmed", "Usman", "Abdul Rehman", "Tariq"];
 
 let z = 0;
 
@@ -14,13 +14,13 @@ while (session[z]) {
     z++;
 };
 
-let someArray = ["Ahmed", "Usman", "Faiz", "Abdul Rehman", "Saad", "Ashhar"];
+let someArray = ["Ahmed", "Usman", "Abdul Rehman", "Tariq", "Ashhar"];
 
 let notFound = true;
 
 while (notFound && someArray.length > 0) {
 
-    if (someArray[0] === "Saad") {
+    if (someArray[0] === "Tariq") {
         console.log("Found It!");
         notFound = false;
     }

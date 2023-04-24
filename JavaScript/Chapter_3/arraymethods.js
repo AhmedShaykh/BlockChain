@@ -119,10 +119,8 @@ arrayReduce.forEach(num => {
 
 console.log(tempNum);
 
-const initialValue = 1;
-
 const sumWithInitial = arrayReduce.reduce(
-    (previousValue, currentValue) => previousValue * currentValue, initialValue
+    (previousValue, currentValue) => previousValue * currentValue
 );
 
 console.log(sumWithInitial);
@@ -166,6 +164,7 @@ console.log(stringArray.toString());
 const array4 = [5, 12, 8, 130, 44];
 
 console.log(array4.at(2));
+
 console.log(array4.at(-2));
 
 // ============= Find ============= //

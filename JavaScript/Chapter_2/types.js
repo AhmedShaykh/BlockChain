@@ -32,11 +32,11 @@ console.log(strToBool, typeof strToBool);
 
 let nullToNr = null;
 nullToNr = Number(nullToNr);
-console.log("null", nullToNr, typeof nullToNr);
+console.log("Null", nullToNr, typeof nullToNr);
 
 let strToNr = "";
 strToNr = Number(strToNr);
-console.log("empty string", strToNr, typeof strToNr);
+console.log("Empty String", strToNr, typeof strToNr);
 
 let nr3 = 2;
 let nr4 = "2";

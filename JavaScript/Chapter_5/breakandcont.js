@@ -45,6 +45,7 @@ for (let i = 0; i < cars.length; i++) {
 };
 
 for (let i = 0; i <= 10; i++) {
+    
     if (i === 3) {
         console.log(`Break: ${i}`);
         continue;
@@ -60,7 +61,7 @@ for (let car of cars) {
         continue;
     }
 
-    if (car.year >= 2020) {
+    if (car.year > 2020) {
         console.log("we could get this one:", car);
     }
 
