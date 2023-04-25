@@ -15,8 +15,7 @@ function foo(b) {
 };
 
 function bar(x) {
-    const y = 2;
-    return foo(x, y);
+    return foo(x);
 };
 
 const baz = bar(8);

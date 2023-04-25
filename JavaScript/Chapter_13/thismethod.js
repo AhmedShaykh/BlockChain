@@ -51,9 +51,6 @@ let obj1 = {
     resetMeeting() {
         this.meeting = 0;
     },
-    meetLeft() {
-        console.log(`You have ${this.meeting} Meeting ...!`);
-    },
     addMeetDone() {
         this.meetDone++
     },
@@ -70,7 +67,8 @@ obj1.summaryMeetDone();
 obj1.decrementMeet();
 obj1.decrementSummary();
 obj1.resetMeeting();
-obj1.meetLeft();
+obj1.addMeeting(1);
+obj1.summary();
 
 class Solana { // ======== This Method Specialy use in Classes ======== //
     constructor(height, width) {
@@ -80,6 +78,8 @@ class Solana { // ======== This Method Specialy use in Classes ======== //
 };
 
 let Coin = new Solana();
+
 Coin.height = 100;
 Coin.width = 300;
+
 console.log(Coin);

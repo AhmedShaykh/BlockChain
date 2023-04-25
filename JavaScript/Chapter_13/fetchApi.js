@@ -5,7 +5,7 @@ async function getAPI() {
     const json = await api.json();
     console.log(json, "Json")
 
-}
+};
 
 getAPI();
 
@@ -25,6 +25,6 @@ async function postAPI() {
 
     const json = await api.json()
     console.log(json, "Json")
-}
+};
 
 postAPI();

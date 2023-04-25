@@ -49,7 +49,7 @@ console.log(add10(2));
 
 let setinterval = function () {
 
-    console.log("You're doing really well, keep coding!");
+    console.log("Keep coding!");
 
 };
 

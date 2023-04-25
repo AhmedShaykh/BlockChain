@@ -103,6 +103,7 @@ new Promise(function (resolve, reject) {
         resolve('Completed');
     }, 2000);
 })
+
     .finally(() => console.log('Done'))
     .then(result => console.log(result));
 

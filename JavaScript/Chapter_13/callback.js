@@ -28,6 +28,7 @@ function judge(grade) {
 };
 
 function getGrade(score, callback) {
+    
     let grade;
 
     switch (true) {
