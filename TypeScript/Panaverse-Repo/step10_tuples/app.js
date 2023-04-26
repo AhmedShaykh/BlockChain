@@ -23,11 +23,6 @@ if (passingResponse[1] === 200) {
     console.log(localInfo);
 }
 ;
-// This means TypeScript will provide the correct types at
-// the right index, and even raise an error if you try to
-// access an object at an un-declared index.
-// passingResponse[2]; // undefined 
-passingResponse[1];
 const staff = [
     [0, "Adankwo", "adankwo.e@"],
     [1, "Kanokwan", "kanokwan.s@"],
@@ -49,4 +44,4 @@ console.log(monthThreePayments);
 // an undefined number of parameters with types:
 let readonlyTuple = [111, "Trevor"]; // readonly
 console.log(readonlyTuple);
-readonlyTuple[0] = 444;
+readonlyTuple[0] = 444; // Error

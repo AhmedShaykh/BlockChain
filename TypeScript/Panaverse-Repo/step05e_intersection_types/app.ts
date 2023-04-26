@@ -14,7 +14,7 @@ let obj1: intersected_type = {
     student_id: 3232,
     name: "Ahmed",
     teacher_Id: 7873,
-    teacher_name: "Dayyan",
+    teacher_name: "Zia",
 };
 
 console.log(obj1.teacher_name);

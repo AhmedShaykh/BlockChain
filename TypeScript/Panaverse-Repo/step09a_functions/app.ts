@@ -1,7 +1,7 @@
 //Named function
 function add(x: number, y: number): number {
 	return x + y;
-}
+};
 
 console.log(add(4, 2));
 
@@ -35,7 +35,7 @@ console.log(myAdd1(6, 6));
 type GreetFunction = (a: string) => void;
 
 function greeter(callback: GreetFunction) {
-	callback("Hello 2023!");
+	callback("Top G!");
 };
 
 const greetFunction: GreetFunction = (greeting: string) => {

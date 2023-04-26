@@ -38,7 +38,6 @@ if (passingResponse[1] === 200) {
 // access an object at an un-declared index.
 
 // passingResponse[2]; // undefined 
-passingResponse[1];
 
 // A tuple can feel like a good pattern for short bits of
 // connected data or for fixtures.
@@ -63,6 +62,7 @@ const payStubs: PayStubs[] = [
   [staff[1], 250, 260],
   [staff[2], 300, 300, 400],
 ];
+
 console.log(payStubs);
 
 const monthOnePayments = payStubs[0][1] + payStubs[1][1] + payStubs[2][1];
@@ -81,4 +81,4 @@ let readonlyTuple = [111, "Trevor"] as const; // readonly
 
 console.log(readonlyTuple);
 
-readonlyTuple[0] = 444;
+readonlyTuple[0] = 444; // Error

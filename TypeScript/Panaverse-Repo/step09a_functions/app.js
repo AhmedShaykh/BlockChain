@@ -3,6 +3,7 @@
 function add(x, y) {
     return x + y;
 }
+;
 console.log(add(4, 2));
 //Anonymous function
 let myAdd1 = function (x, y) {
@@ -24,7 +25,7 @@ let myAdd4 = (a, b) => a + b;
 //output will be: var myAdd4 = function(a : number, b : number) {return a + b};
 console.log(myAdd1(6, 6));
 function greeter(callback) {
-    callback("Hello 2023!");
+    callback("Top G!");
 }
 ;
 const greetFunction = (greeting) => {
