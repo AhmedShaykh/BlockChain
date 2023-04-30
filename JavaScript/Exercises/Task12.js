@@ -43,7 +43,7 @@ promise.then(function (data) {
     .catch(function (error) {
         console.log(error);
 
-        return 'Error caught';
+        return 'Error Caught';
     })
 
     .then(function (data) {

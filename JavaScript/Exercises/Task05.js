@@ -24,10 +24,10 @@ promise.then(function success(data) {
 
 var promise = new Promise(function (resolve, reject) {
     setTimeout(function () {
-        resolve('hello world 1');
-        resolve('hello world 2');
-        resolve('hello world 3');
-        resolve('hello world 4');
+        resolve('Hello World 1');
+        resolve('Hello World 2');
+        resolve('Hello World 3');
+        resolve('Hello World 4');
     }, 2000);
 });
 

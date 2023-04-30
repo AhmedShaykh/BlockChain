@@ -21,9 +21,9 @@ function job() {
     });
 }
 
-let promisex = job();
+let promises = job();
 
-promisex.then(function () {
+promises.then(function () {
     console.log('Success 1');
 })
 

@@ -48,6 +48,8 @@ function job4() {
 };
 
 function doSomething(data) {
+
     console.log(data + " Data");
+
     console.log("End!");
 };

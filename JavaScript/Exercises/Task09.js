@@ -15,7 +15,7 @@ function job() {
 };
 
 function doSomething(data) {
-    console.log("Data " + data);
+    console.log("Data: " + data);
 };
 
 let promise = request();

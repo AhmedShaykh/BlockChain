@@ -1,9 +1,10 @@
 function getToastPromise() {
     return new Promise((resolve, reject) => {
-        let cookMood = 7;
+
+        let chiefMood = 7;
 
         setTimeout(() => {
-            if (cookMood >= 5) {
+            if (chiefMood >= 5) {
                 resolve("Toast is Ready");
             }
             else {
@@ -15,10 +16,11 @@ function getToastPromise() {
 
 function friedEggPromise() {
     return new Promise((resolve, reject) => {
-        let cookMood = 4;
+
+        let chiefMood = 4;
 
         setTimeout(() => {
-            if (cookMood >= 3) {
+            if (chiefMood >= 3) {
                 resolve("Egg is Ready");
             }
             else {
