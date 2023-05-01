@@ -7,7 +7,7 @@ class Admin {
 const username = new Admin();
 console.log(`${username.fName} ${username.mName = "Saleem"} ${username.lName}`);
 
-username.lName = "Shaykh"; // Initial Value Assign New Value
+username.lName = "Shaykh"; // Change Value
 console.log(`${username.fName} ${username.lName}`);
 
 class Data {
@@ -18,11 +18,11 @@ class Data {
     }
 };
 
-const show: Data = new Data("Learning OOP In TypeScript");
+const show: Data = new Data("Andrew Tate");
 console.log(show.name);
 
-show.name = "Learning Classes In TypeScript";
-console.log(show.name); // Assign New Value
+show.name = "Top G";
+console.log(show.name); // Change Value
 
 class Human {
     name: String;
@@ -127,14 +127,14 @@ pointer.x = 3;
 console.log(pointer.x, pointer.y);
 
 class ReadData {
-    readonly name: String = "AHM X"; // Initial Value No Assign New Value
+    readonly name: String = "AHM X"; // Initial Value No Change New Value
 };
 
 const read: ReadData = new ReadData();
 console.log(read.name);
 
 class ReadValue {
-    readonly value: String; // Value Assign In One Time No Assign New Value
+    readonly value: String; // Value Assign In One Time No Change Value
 
     constructor(value: string) {
         this.value = value;
@@ -171,7 +171,7 @@ class Bugatti extends Car {
     }
 };
 
-const myCar1: Bugatti = new Bugatti("Black", 40000);
+const myCar1: Bugatti = new Bugatti("Black", 5400000);
 myCar1.display();
 
 class Tesla extends Car {
@@ -188,7 +188,7 @@ class Tesla extends Car {
     }
 };
 
-const myCar2: Tesla = new Tesla("Grey", "AI");
+const myCar2: Tesla = new Tesla("Grey", "AI Drive");
 myCar2.drive();
 
 myCar2.color = "Red";
@@ -360,7 +360,7 @@ class MyClass {
 
     isValid = true;
 
-    check(s: string) {
+    check(s: string): boolean {
         return this[s] as boolean;
     }
 };
@@ -476,7 +476,7 @@ class Base {
 };
 
 const checker = new Base();
-console.log(checker["x"]); // But Problem In TypeScript Is Private Property Assign In This Method!
+console.log(checker["x"]); // But Problem In TypeScript Is Private Property Assign In Array String!
 
 class Check {
     #x: Number; // JavaScript This New Native Build-in Private Property Solve The Issue!
@@ -525,7 +525,7 @@ class MyStatic {
 };
 
 console.log(MyStatic.x) // Static Value Only Use In Classes Not Object
-MyStatic.printX();
+MyStatic.printX(); // In Static Class (Method or Prop) Call Without Object But It's Static
 
 const stat = new MyStatic();
 console.log(stat.y);
@@ -580,7 +580,7 @@ class MyTypes<T1, T2> {
 const gener = new MyTypes<string, number>("Ahmed Shaykh", 786);
 gener.generic();
 
-// ============= Abstract ============= //
+// ============= Abstraction ============= //
 
 abstract class Crypto {
     abstract encrypt(): string; // Implementions Hide
