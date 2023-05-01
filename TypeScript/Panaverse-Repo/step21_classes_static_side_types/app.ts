@@ -12,7 +12,6 @@ interface ClockInterface {
 //You may notice that if you create an interface with a construct signature and try to 
 //create a class that implements this interface you get an error:
 
-
 class Clock1 implements ClockInterface  {//Error
     currentTime: Date;
     constructor(h: number, m: number) { }
@@ -35,11 +34,3 @@ class Clock implements MyClockInterface  {
 
 var cs: ClockStatic = Clock;
 var newClock: ClockInterface = new cs(7, 30);
-
-
-
-
-
-
-
-

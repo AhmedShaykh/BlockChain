@@ -71,4 +71,5 @@ class F extends E {
 }
 let e: E = new E("E",1);
 let f: F = new F("F");
+
 f.displayName(); // Display "F"

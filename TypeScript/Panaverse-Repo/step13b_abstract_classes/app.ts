@@ -1,4 +1,3 @@
-
 abstract class Base {
     foo(): number { return this.bar(); }
     abstract bar() : number;

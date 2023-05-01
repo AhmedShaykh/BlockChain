@@ -2,9 +2,7 @@
 //being able to create a component that can work over a variety of types rather than a single one. 
 //This allows users to consume these components and use their own types.
 
-
-class Container<T>
-{
+class Container<T>{
     private _array: T[];
     
     constructor(){
@@ -18,6 +16,3 @@ class Container<T>
 
 let c = new Container<string>();
 let c1 = new Container<number>();
-
-
-

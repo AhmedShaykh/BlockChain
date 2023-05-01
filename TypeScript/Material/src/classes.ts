@@ -21,8 +21,8 @@ class Data {
 const show: Data = new Data("Andrew Tate");
 console.log(show.name);
 
-show.name = "Top G";
-console.log(show.name); // Change Value
+show.name = "Top G"; // Change Value
+console.log(show.name);
 
 class Human {
     name: String;

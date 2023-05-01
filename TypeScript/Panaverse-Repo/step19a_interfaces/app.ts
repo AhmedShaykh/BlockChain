@@ -28,10 +28,6 @@ printLabelX({name: "Zia"});// Ok, `name` matched by index signature
 //Case 3
 printLabel({size: 10, label: "Size 10 Object"});//Case 3 Fresh Literal: Error no extra properties allowed
 
-
-
-
-
 //Stale Objects:
 
 //Case 1:
@@ -49,8 +45,6 @@ printLabelX(obj3);// Ok, `name` matched by index signature
 //Case 3
 var myObj4 = {size: 10, label: "Size 10 Object"};
 printLabel(myObj4);//Case 3 Stale Literal: extra properties allowed
-
-
 
 //**************************************************************
 
@@ -72,7 +66,6 @@ function printLabelY2(labelledObj: LabelledValue2) {
   console.log(arguments[0]);
 }
 
-
 //Fresh Objects
 
 //Case 1
@@ -86,9 +79,6 @@ printLabelY2({name: "Zia"});// Ok, `name` matched by index signature
 
 //Case 3
 printLabelY({size: 11, label: "Size 11 Object"});//Case 3 Fresh Literal: Error no extra properties allowed
-
-
-
 
 //Stale Objects
 

@@ -1,6 +1,5 @@
 ///<reference path="node_modules\reflect-metadata\reflect-metadata.d.ts"/>
 
-
 //http://blog.wolksoftware.com/decorators-reflection-javascript-typescript
 //http://blog.wolksoftware.com/decorators-metadata-reflection-in-typescript-from-novice-to-expert-part-ii
 
@@ -20,7 +19,6 @@ class C {
     }
 }
 */
-
 
 //Before we can actually use @logClass we need to declare the class decorator somewhere in our application. 
 //Let’s take a look to the log class decorator implementation.
@@ -52,9 +50,9 @@ function logClass(target: any) {
   return f;
 }
 
-
 //apply the decorator to a class
 @logClass
+
 class Person { 
 
   public name: string;

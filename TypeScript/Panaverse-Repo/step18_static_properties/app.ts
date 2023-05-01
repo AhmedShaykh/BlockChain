@@ -5,10 +5,11 @@
 //Static values belog to the class (only one value) not the instances.
 
 class MyClass {
-    static x = 0;
-    static printX() {
-      console.log(MyClass.x);
-    }
+  static x = 0;
+  static printX() {
+    console.log(MyClass.x);
   }
-  console.log(MyClass.x);
-  MyClass.printX();
+}
+
+console.log(MyClass.x);
+MyClass.printX();

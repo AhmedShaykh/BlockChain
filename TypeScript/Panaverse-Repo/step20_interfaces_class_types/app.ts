@@ -14,6 +14,5 @@ class Clock implements ClockInterface  {
     constructor(h: number, m: number) { }
 }
 
-
 //Interfaces describe the public side of the class, rather than both the public and private side. 
 //This prohibits you from using them to check that a class also has particular types for the private side of the class instance.

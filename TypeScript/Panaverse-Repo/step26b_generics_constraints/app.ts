@@ -5,7 +5,6 @@ class MyObject {
     name: string
 }
 
-
 class Container<T extends MyObject>
 {
     private _array: T[];
@@ -39,6 +38,3 @@ obj.name = "Zeeshan";
 let cont = new Container<MyObject2>();
 cont.add(obj);
 cont.print();
-
-
-

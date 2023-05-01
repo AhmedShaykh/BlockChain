@@ -37,9 +37,6 @@ class Robot {
     
 }
 
-
-
-
 let h: Human = new Human("Tom");
 let a: Animal = new Animal("Goat");
 let r: Robot = new Robot("R2-D2");

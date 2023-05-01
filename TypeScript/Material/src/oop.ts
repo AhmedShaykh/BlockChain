@@ -44,7 +44,7 @@ let hum: Human = new Animal("Dog"); // Fresh Object
 hum.eat();
 
 let r0: Robot = new Animal("Donkey"); // In This Method Class Type Check Object Same Property & Method Than Accept It!
-console.log(r0.name); // It Assign Same Property But Not Assign Extra Property!
+console.log(r0); // It Assign Same Property But Not Assign Extra Property!
 
 class WildAnimal {
     title: string;
@@ -54,7 +54,7 @@ class WildAnimal {
     }
 
     eat() {
-        console.log(this.title + " is a Wild Animal and is Eating Animals");
+        console.log(this.title + " is a Wild Animal");
     }
 };
 
@@ -72,8 +72,8 @@ console.log(h instanceof Animal);
 
 // ============= Abstraction ============= //
 
-abstract class User { // Abstraction Not Use Object Rather Inherit Other Class
-    abstract getName(): string; // Abstraction Method Use In Abstract Class
+abstract class User { // Abstraction Not Call Directly Rather Inherit Other Class
+    abstract getName(): string; // Abstraction (Method & Prop) Create In Abstract Class
 
     printName(): void {
         console.log(`Hello ${this.getName()}`);
@@ -141,7 +141,7 @@ pet.makeSound();
 const pet2 = new Cat();
 pet2.makeSound();
 
-interface Vehicle { // Interface Not Assign Implementions Interface Use Only Structure Of Object
+interface Vehicle { // Interface Use Structure Of Object
     make: string;
     model: number;
     startEngine(): void;
@@ -165,9 +165,9 @@ let myCar = new Car("Toyota", 2022);
 myCar.startEngine();
 
 abstract class Motorcycle {
-    make: string = "Harley Davidson"; // Abstraction Implementions Hide Then Assign Child Class
+    make: string = "Harley Davidson";
     model!: string;
-    abstract startEngine(): void;
+    abstract startEngine(): void; // Abstraction Implementions Hide Then Value In Assign Child Class
 };
 
 class HarleyDavidson extends Motorcycle {
@@ -295,7 +295,7 @@ class Alexa extends Ai {
 
     constructor(action: string, time: string, response?: string) {
         super(action, time);
-        this.response = response || "Your Response";
+        this.response = response || "Response";
     }
 };
 
@@ -312,7 +312,7 @@ const myAi3 = new Alexa("Task 3", "7 Mins");
 console.log(myAi3);
 
 myAi3.response = "Error 404!";
-console.log(`Your Response: ${myAi3.response}`);
+console.log(`Response: ${myAi3.response}`);
 
 // ============= Polymorphism ============= //
 

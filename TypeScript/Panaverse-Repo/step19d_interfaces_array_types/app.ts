@@ -32,6 +32,7 @@ interface Dictionary2 {
 } 
 
 let myDictionary2: Dictionary2 = {"first": "Bob", "second": "Fred"}; // Will not work, property length is required
+
 let myDictionary3: Dictionary2 = {"first": "Bob", "second": "Fred",length:"2"}; // Will work, length property is defined but not much usefull 
 
 var first = myDictionary3["first"];
@@ -47,5 +48,3 @@ interface AnotherDictionary {
   [index: string]: string;//Note there is no name assigned to the function signature
   length: number;    // error, the type of 'length' is not a subtype of the indexer
 } 
-
-

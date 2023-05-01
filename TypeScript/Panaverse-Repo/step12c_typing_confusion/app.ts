@@ -37,7 +37,6 @@ class Animal {
     }
 }
 
-
 let d  = {name:"Hello",age:4};
 
 let h: Human = {name:"hello"}; // This is allowed
@@ -47,7 +46,6 @@ let h1: Human = d; // Concept of stale object applied here
 //assignment works because of structural typing
 let isHuman:boolean = h instanceof Human; 
 console.log(isHuman); // false
-
 
 //This is not allowed need to add all properties 
 //including functions

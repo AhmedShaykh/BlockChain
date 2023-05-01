@@ -4,9 +4,6 @@
 //http://blog.wolksoftware.com/decorators-metadata-reflection-in-typescript-from-novice-to-expert-part-3
 //Teaches how to allow developers to pass arguments to a decorator when it is consumed.
 
-
-
-
 /*
 function logClass(target: any) {
 
@@ -44,13 +41,10 @@ function logClassWithArgs(filter: Object) {
     }
 }
 
-
-
-
 //apply the decorator to a class
 @logClassWithArgs({ when : { name : "Zeeshan"} })
-class Person { 
 
+class Person { 
   public name: string;
   public surname: string;
 
@@ -59,7 +53,6 @@ class Person {
     this.surname = surname;
   }
 }
-
 
 var me = new Person("Zia", "Khan");  
 // New: Person
